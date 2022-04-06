@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'Moret';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Moret-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Moret-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Extrabold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Europa';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Europa-Regular.ttf') format('ttf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply w-screen overflow-x-hidden bg-pallet font-moret text-lg font-normal text-primary;
+  }
+
+  h1 {
+    font-size: calc(27.46939px + 4.40816vw);
+    line-height: 1.05em;
+  }
+  h2 {
+    @apply leading-tight;
+    font-size: calc(23.87755px + 1.63265vw);
+  }
+
+  p {
+    font-size: calc(14.93878px + 0.81633vw);
+  }
+
+  ul li {
+    @apply font-europa;
+  }
+
+  span svg {
+    @apply overflow-hidden;
+    right: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 2px);
+  }
+}
+
+@layer components {
+  .hamburger-line {
+    @apply w-5 bg-white;
+    height: 2px;
+    border-radius: 2px;
+  }
+
+  .padding-page {
+    @apply px-5;
+  }
+  .padding-page-lg {
+    @apply px-10;
+  }
+
+  .title {
+    @apply font-light leading-tight !important;
+    font-size: calc(36.93878px + 0.81633vw);
+  }
+
+  .product-title {
+    @apply font-europa font-normal leading-tight;
+    font-size: calc(13.55102px + 0.65306vw);
+  }
+
+  .svg-border-1 {
+    background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201223%2011%22%3E%3Cg%20transform%3D%22translate%280.003%200.493%29%22%3E%3Cpath%20class%3D%22a%22%20style%3D%22fill%3Anone%3Bstroke%3A%23000%3Bstroke-miterlimit%3A10%3Bstroke-width%3A2.8px%22%20d%3D%22M1222.053%2C7.307S967.872%2C6%2C749.566%2C8.258%2C393.1%2C11.248%2C249.6%2C6.007%2C0%2C0%2C0%2C0%22%20transform%3D%22translate%281222.053%209.976%29%20rotate%28180%29%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-position: 50%;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 0.98119%;
+  }
+
+  .product-description {
+    @apply font-europa;
+    font-size: calc(11.38776px + 0.16327vw);
+  }
+
+  .product-tag {
+    @apply absolute top-[15px] z-10 rounded-full bg-pink-light py-[15px] px-[14px] text-[10px] text-white;
+  }
+
+  .text-underline svg {
+    height: 10.8px;
+    left: calc(0);
+    top: calc(100% + -5px);
+  }
+}
+
+@keyframes drawpath {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dashoffset: 0.01;
+  }
+}

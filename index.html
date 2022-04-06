@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/index.css" />
+    <title>Absolution-Cosmetics</title>
+  </head>
+  <body>
+    <!-- https://www.absolution-cosmetics.com/en/ -->
+
+    <!--================= HERO ================= -->
+    <section class="h-screen w-screen">
+      <div class="relative h-screen">
+        <img
+          class="po absolute h-full w-full object-cover"
+          src="./assets/images/home-bg.png"
+          alt=""
+        />
+
+        <div class="padding-page">
+          <div class="relative">
+            <p
+              class="relative pt-[16px] pb-[12px] text-center text-md text-white"
+            >
+              Free international delivery above €100
+            </p>
+            <object
+              type="image/svg+xml"
+              data="./assets/svgs/line.svg"
+              class="text-white"
+            >
+              <!-- fallback image in CSS -->
+            </object>
+          </div>
+          <div class="relative flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="flex h-12 flex-col justify-center gap-1">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+              </div>
+              <div>
+                <object
+                  data="./assets/svgs/search.svg"
+                  class="text-white"
+                ></object>
+              </div>
+            </div>
+
+            <a href="#">
+              <img src="./assets/svgs/logo.svg" class="text-white" alt="" />
+            </a>
+
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="34" height="30">
+                <path fill="none" d="M4 0h30v30H4z"></path>
+                <path
+                  d="M26.8 25.031H11.2L6 9.52h9.751v2.386a3.378 3.378 0 003.119 3.58h.26a3.378 3.378 0 003.119-3.58V9.521h-6.5V7.134a3.378 3.378 0 013.121-3.581h.26a3.378 3.378 0 013.119 3.58V9.52H32l-5.2 15.51z"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  fill="none"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <!-- new -->
+          <div
+            class="relative flex flex-col items-center gap-3 px-10 pt-40 text-center"
+          >
+            <p>New</p>
+            <h1>La Crème Beau Jour</h1>
+            <div
+              class="0.3s hover: w-full rounded-full border border-primary p-5 outline-none transition hover:bg-primary hover:text-white"
+            >
+              <a class="flex w-full items-center justify-center gap-3" href="#">
+                <span>Discover</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22.25"
+                  height="7.222"
+                  viewBox="0 0 22.25 7.222"
+                >
+                  <g transform="translate(0.5 0.25)">
+                    <path
+                      style="
+                        fill: none;
+                        stroke-linecap: square;
+                        stroke: currentColor;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M.5.5h16"
+                      transform="translate(-0.5 3)"
+                    ></path>
+                    <path
+                      class=""
+                      style="
+                        fill: currentColor;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 0.5px;
+                        stroke: currentColor;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
+                      transform="translate(13.5)"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLICK SLIDE -->
+    <div class="padding-page">
+      <section class="">
+        <div class="slick-list px-5 py-8">
+          <div class="px-2 text-center">
+            <h2>
+              Our products are organic, unisex and made in France with love!
+            </h2>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!--============= svg border ====================-->
+    <section>
+      <div class="svg-border-1"></div>
+    </section>
+
+    <!-- section home product -->
+    <div class="padding-page">
+      <section class="relative overflow-hidden pt-20 pb-[5px]">
+        <div class="mb-[5rem] flex flex-col gap-3 text-center">
+          <p>Special selection for dry skin</p>
+          <h2 class="title">Natural and certified-organic skincare</h2>
+        </div>
+
+        <!-- products -->
+        <div class="product-list grid grid-cols-2 gap-x-3 gap-y-[3rem]">
+          <div>
+            <a class="relative" href="#">
+              <img
+                class="w-full"
+                src="./assets/images/product-2.webp"
+                alt="product 1"
+              />
+              <p class="product-tag">NEW</p>
+            </a>
+            <!-- product details -->
+            <div class="flex flex-col gap-1">
+              <ul class="product-description grid grid-cols-2">
+                <li>Moisturizes</li>
+                <li>Nourishes</li>
+                <li>Protects</li>
+                <li>Regenerates</li>
+              </ul>
+              <h2 class="product-title font-europa">
+                <a href="#">La Crème Beau Jour</a>
+              </h2>
+              <span class="px-1">€49.00</span>
+              <p class="product-description">Every day is a good day!</p>
+              <div class="flex items-center gap-1">
+                <div>
+                  <img src="./assets/svgs/star.svg" alt="" />
+                </div>
+                <span class="font-semiboldbold">4.7</span>
+                <p class="ml-8 text-gray">3 reviews</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a class="relative" href="#">
+              <img
+                class="w-full"
+                src="./assets/images/product-1.webp"
+                alt="product 1"
+              />
+              <p class="product-tag">NEW</p>
+            </a>
+            <!-- product details -->
+            <div class="flex flex-col gap-1">
+              <ul class="product-description grid grid-cols-2">
+                <li>Nourishes</li>
+                <li>Plumps</li>
+                <li>Regenerates</li>
+                <li>Repairs</li>
+              </ul>
+              <h2 class="product-title font-europa">
+                <a href="#">La Crème Beau Jour</a>
+              </h2>
+              <span class="px-1">€69.00</span>
+              <p class="product-description">
+                Multipurpose face oil for all skin moods
+              </p>
+              <div class="flex items-center gap-1">
+                <div>
+                  <img src="./assets/svgs/star.svg" alt="" />
+                </div>
+                <span class="font-semiboldbold">5.0</span>
+                <p class="ml-8 text-gray">16 reviews</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a class="relative" href="#">
+              <img
+                class="w-full"
+                src="./assets/images/product-3.webp"
+                alt="product 1"
+              />
+              <p class="product-tag">Best<br />Seller</p>
+            </a>
+            <!-- product details -->
+            <div class="flex flex-col gap-1">
+              <ul class="product-description grid grid-cols-2">
+                <li>Purifies</li>
+                <li>Regulates</li>
+                <li>Tightens</li>
+                <li>pores</li>
+              </ul>
+              <h2 class="product-title font-europa">
+                <a href="#">Le Masque Pureté Détoxifiant</a>
+              </h2>
+              <span class="px-1">€31.00</span>
+              <p class="product-description">
+                Purifying and detoxifying face mask
+              </p>
+              <div class="flex items-center gap-1">
+                <div>
+                  <img src="./assets/svgs/star.svg" alt="" />
+                </div>
+                <span class="font-semiboldbold">4.7</span>
+                <p class="ml-8 text-gray">57 reviews</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a class="relative" href="#">
+              <img
+                class="w-full"
+                src="./assets/images/product-4.webp"
+                alt="product 1"
+              />
+              <p class="product-tag">Best<br />Seller</p>
+            </a>
+            <!-- product details -->
+            <div class="flex flex-col gap-1">
+              <ul class="product-description grid grid-cols-2">
+                <li>Nourishes</li>
+                <li>Regulates</li>
+              </ul>
+              <h2 class="product-title font-europa">
+                <a href="#">La Crème de Santé</a>
+              </h2>
+              <span class="px-1">€38.00</span>
+              <p class="product-description">It's all about balance!</p>
+              <div class="flex items-center gap-1">
+                <div>
+                  <img src="./assets/svgs/star.svg" alt="" />
+                </div>
+                <span class="font-semiboldbold">4.7</span>
+                <p class="ml-8 text-gray">45 reviews</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a class="relative" href="#">
+              <img
+                class="w-full"
+                src="./assets/images/product-5.webp"
+                alt="product 1"
+              />
+              <p class="product-tag">Best<br />Seller</p>
+            </a>
+            <!-- product details -->
+            <div class="flex flex-col gap-1">
+              <ul class="product-description grid grid-cols-2">
+                <li>Firms</li>
+                <li>Smoothes</li>
+              </ul>
+              <h2 class="product-title font-europa">
+                <a href="#">La Crème du Temps</a>
+              </h2>
+              <span class="px-1">€62.00</span>
+              <p class="product-description">
+                Complete pro-aging moisturizer for mature skin
+              </p>
+              <div class="flex items-center gap-1">
+                <div>
+                  <img src="./assets/svgs/star.svg" alt="" />
+                </div>
+                <span class="font-semiboldbold">4.7</span>
+                <p class="ml-8 text-gray">66 reviews</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a class="relative" href="#">
+              <img
+                class="w-full"
+                src="./assets/images/product-6.webp"
+                alt="product 1"
+              />
+              <p class="product-tag">Best<br />Seller</p>
+            </a>
+            <!-- product details -->
+            <div class="flex flex-col gap-1">
+              <ul class="product-description grid grid-cols-2">
+                <li>Nourishes</li>
+                <li>Repairs</li>
+              </ul>
+              <h2 class="product-title font-europa">
+                <a href="#">La Crème Beau Jour</a>
+              </h2>
+              <span class="px-1">€15.00</span>
+              <p class="product-description">
+                Nourishing balm for lips and dry areas
+              </p>
+              <div class="flex items-center gap-1">
+                <div>
+                  <img src="./assets/svgs/star.svg" alt="" />
+                </div>
+                <span class="font-semiboldbold">4.8</span>
+                <p class="ml-8 text-gray">5 reviews</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- btn see all -->
+          <div
+            class="col-span-2 rounded-full border border-primary py-4 text-primary"
+          >
+            <a class="flex items-center justify-center gap-x-3" href="#">
+              <span>See all</span>
+              <div class="text-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22.25"
+                  height="7.222"
+                  viewBox="0 0 22.25 7.222"
+                >
+                  <g transform="translate(0.5 0.25)">
+                    <path
+                      style="
+                        fill: none;
+                        stroke-linecap: square;
+                        stroke: #000;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M.5.5h16"
+                      transform="translate(-0.5 3)"
+                    ></path>
+                    <path
+                      class="b"
+                      style="
+                        fill: 'currentColor';
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 0.5px;
+                        stroke: 'currentColor';
+                        stroke-miterlimit: 10;
+                      "
+                      d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
+                      transform="translate(13.5)"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!--=============== SECTION home values ================-->
+    <div class="padding-page-lg">
+      <section class="mt-10">
+        <h2 class="text-center leading-normal">
+          Our Absolution products are certified
+          <span class="relative inline-block"
+            >organic
+            <svg
+              class="absolute top-0"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="180.036"
+              height="43.277"
+              viewBox="0 0 180.036 63.277"
+            >
+              <path
+                d="M53.116 4.703S1 8.708 1 34.534s44.613 27.744 97.167 27.744 75.314-8.313 80.5-28.788c4.071-16.052-29.789-29.513-83.927-32.055a444.034 444.034 0 00-49.009.56"
+                fill="none"
+                stroke="#212121"
+                pathLength="1"
+                style="
+                  stroke-dasharray: 1;
+                  stroke-dashoffset: 1;
+                  animation: drawpath 2s ease-in-out forwards;
+                "
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </span>
+          ,
+          <span class="relative inline-block"
+            >gender-fluid
+            <svg
+              class="absolute top-0"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="180.036"
+              height="63.277"
+              viewBox="0 0 180.036 63.277"
+            >
+              <path
+                class="azz"
+                pathLength="1"
+                style="
+                  stroke-dasharray: 1;
+                  stroke-dashoffset: 1;
+                  animation: drawpath 2s ease-in-out forwards 1s;
+                "
+                d="M53.116 4.703S1 8.708 1 34.534s44.613 27.744 97.167 27.744 75.314-8.313 80.5-28.788c4.071-16.052-29.789-29.513-83.927-32.055a444.034 444.034 0 00-49.009.56"
+                fill="none"
+                stroke="#212121"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </span>
+          ,
+          <span class="relative inline-block">
+            non toxic
+            <svg
+              class="absolute top-0"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="180.036"
+              height="63.277"
+              viewBox="0 0 180.036 63.277"
+            >
+              <path
+                class="azz"
+                pathLength="1"
+                style="
+                  stroke-dasharray: 1;
+                  stroke-dashoffset: 1;
+                  animation: drawpath 2s ease-in-out forwards 2s;
+                "
+                d="M53.116 4.703S1 8.708 1 34.534s44.613 27.744 97.167 27.744 75.314-8.313 80.5-28.788c4.071-16.052-29.789-29.513-83.927-32.055a444.034 444.034 0 00-49.009.56"
+                fill="none"
+                stroke="#212121"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              ></path>
+            </svg>
+            ,
+          </span>
+          and can be adapted to
+          <span class="text-underline relative inline-block">
+            your skin mood
+            <svg
+              class="text-underline absolute bottom-0"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="139.967"
+              height="10.866"
+              viewBox="0 0 139.967 10.866"
+            >
+              <path
+                d="M1.077 4.98s92.379-.712 137.8.879"
+                pathLength="1"
+                style="
+                  stroke-dasharray: 1;
+                  stroke-dashoffset: 1;
+                  animation: drawpath 2s ease-in-out forwards 3s;
+                "
+                fill="none"
+                stroke="#212121"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="1.999"
+              ></path>
+            </svg>
+          </span>
+          , day after day. Now you can give the
+          <span class="text-underline relative inline-block">
+            best of Nature
+            <svg
+              class="absolute bottom-0"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="139.967"
+              height="10.866"
+              viewBox="0 0 139.967 10.866"
+            >
+              <path
+                d="M1.077 4.98s92.379-.712 137.8.879"
+                pathLength="1"
+                style="
+                  stroke-dasharray: 1;
+                  stroke-dashoffset: 1;
+                  animation: drawpath 2s ease-in-out forwards 4s;
+                "
+                fill="none"
+                stroke="#212121"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="1.999"
+              ></path>
+            </svg>
+          </span>
+          to your skin while taking care of your
+          <span class="relative inline-block">
+            health
+            <svg
+              class="absolute top-0"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="180.036"
+              height="63.277"
+              viewBox="0 0 180.036 63.277"
+            >
+              <path
+                class="azz"
+                pathLength="1"
+                style="
+                  stroke-dasharray: 1;
+                  stroke-dashoffset: 1;
+                  animation: drawpath 2s ease-in-out forwards 5s;
+                "
+                d="M53.116 4.703S1 8.708 1 34.534s44.613 27.744 97.167 27.744 75.314-8.313 80.5-28.788c4.071-16.052-29.789-29.513-83.927-32.055a444.034 444.034 0 00-49.009.56"
+                fill="none"
+                stroke="#212121"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </span>
+          and the
+          <span class="relative inline-block">
+            planet
+            <svg
+              class="absolute top-0"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="180.036"
+              height="63.277"
+              viewBox="0 0 180.036 63.277"
+            >
+              <path
+                class="azz"
+                pathLength="1"
+                style="
+                  stroke-dasharray: 1;
+                  stroke-dashoffset: 1;
+                  animation: drawpath 2s ease-in-out forwards 6s;
+                "
+                d="M53.116 4.703S1 8.708 1 34.534s44.613 27.744 97.167 27.744 75.314-8.313 80.5-28.788c4.071-16.052-29.789-29.513-83.927-32.055a444.034 444.034 0 00-49.009.56"
+                fill="none"
+                stroke="#212121"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </span>
+        </h2>
+      </section>
+    </div>
+  </body>
+</html>
