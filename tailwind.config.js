@@ -38,7 +38,7 @@ module.exports = {
       lg: '18px',
       xl: '20px',
       xxl: '22px',
-      heading: '32px',
+      heading3: '30px',
     },
     fontFamily: {
       europa: ['Europa', ...defaultTheme.fontFamily['serif']],

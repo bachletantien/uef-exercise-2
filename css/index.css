@@ -52,7 +52,7 @@
 
 @layer base {
   body {
-    @apply w-screen overflow-x-hidden bg-pallet font-moret text-lg font-normal text-primary;
+    @apply w-screen overflow-x-hidden  bg-pallet font-moret text-lg font-normal leading-relaxed text-primary;
   }
 
   h1 {
@@ -60,8 +60,13 @@
     line-height: 1.05em;
   }
   h2 {
-    @apply leading-tight;
+    @apply leading-normal;
     font-size: calc(23.87755px + 1.63265vw);
+  }
+
+  h3 {
+    @apply font-light leading-7;
+    font-size: calc(22.77551px + 0.32653vw);
   }
 
   p {
@@ -73,7 +78,6 @@
   }
 
   span svg {
-    @apply overflow-hidden;
     right: -10px;
     width: calc(100% + 20px);
     height: calc(100% + 2px);
@@ -125,6 +129,29 @@
     height: 10.8px;
     left: calc(0);
     top: calc(100% + -5px);
+  }
+
+  .hero-media {
+    clip-path: polygon(
+      0px 100%,
+      0px 8%,
+      13.34% 6.91%,
+      27.99% 6.5%,
+      44.5% 6.16%,
+      59.72% 5.35%,
+      73.9% 4.55%,
+      87.46% 2.9%,
+      100% 0px,
+      100% 100%,
+      80.99% 97.84%,
+      64.23% 97.83%,
+      31.73% 99.66%
+    );
+  }
+
+  .category-title {
+    @apply mb-[15px] font-moret;
+    font-size: calc(18.16327px + 0.4898vw);
   }
 }
 
