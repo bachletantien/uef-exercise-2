@@ -61,7 +61,8 @@
   }
   h2 {
     @apply leading-normal;
-    font-size: calc(23.87755px + 1.63265vw);
+    font-size: calc(22.87755px + 1.63265vw);
+    line-height: 1.13em;
   }
 
   h3 {
@@ -103,26 +104,12 @@
     font-size: calc(36.93878px + 0.81633vw);
   }
 
-  .product-title {
-    @apply font-europa font-normal leading-tight;
-    font-size: calc(13.55102px + 0.65306vw);
-  }
-
   .svg-border-1 {
     background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201223%2011%22%3E%3Cg%20transform%3D%22translate%280.003%200.493%29%22%3E%3Cpath%20class%3D%22a%22%20style%3D%22fill%3Anone%3Bstroke%3A%23000%3Bstroke-miterlimit%3A10%3Bstroke-width%3A2.8px%22%20d%3D%22M1222.053%2C7.307S967.872%2C6%2C749.566%2C8.258%2C393.1%2C11.248%2C249.6%2C6.007%2C0%2C0%2C0%2C0%22%20transform%3D%22translate%281222.053%209.976%29%20rotate%28180%29%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
     background-position: 50%;
     background-size: cover;
     height: 0;
     padding-bottom: 0.98119%;
-  }
-
-  .product-description {
-    @apply font-europa;
-    font-size: calc(11.38776px + 0.16327vw);
-  }
-
-  .product-tag {
-    @apply absolute top-[15px] z-10 rounded-full bg-pink-light py-[15px] px-[14px] text-[10px] text-white;
   }
 
   .text-underline svg {
@@ -153,6 +140,10 @@
     @apply mb-[15px] font-moret;
     font-size: calc(18.16327px + 0.4898vw);
   }
+
+  .item-card {
+    @apply overflow-hidden rounded-xl py-5;
+  }
 }
 
 @keyframes drawpath {
@@ -162,4 +153,110 @@
   100% {
     stroke-dashoffset: 0.01;
   }
+}
+
+.data-item {
+  border: 1px solid #1d1d1b;
+  border-radius: 35px;
+  color: theme('colors.primary');
+  cursor: pointer;
+  display: block;
+  font-weight: 400;
+  line-height: 1.1;
+  opacity: 0.4;
+  padding: 15px;
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+/*======================= PRODUCT ITEM ==========================*/
+.product-title {
+  font-size: calc(16.55102px + 0.65306vw);
+  font-family: theme('fontFamily.moret');
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.product-tag {
+  @apply absolute top-[15px] z-10 rounded-full bg-pink-light py-[15px] px-[14px] text-[10px] text-white;
+  position: absolute;
+  top: 15px;
+  z-index: 10;
+  border-radius: 100%;
+  background: theme('colors.pink.light');
+  padding: 15px 14px 15px 14px;
+  font-size: 10px;
+  color: #fff;
+}
+
+.product-tags {
+  font-size: calc(11.38776px + 0.16327vw);
+  font-family: theme('fontFamily.europa');
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product-description {
+  font-size: calc(11.38776px + 0.16327vw);
+  font-family: theme('fontFamily.europa');
+  font-weight: 500;
+  flex: 1;
+}
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.product-review {
+  margin-left: 32px;
+  color: theme('colors.gray.DEFAULT');
+}
+.product-rating {
+  font-weight: 500;
+}
+
+/* -----------------section-diagnosis--------------------- */
+.section-diagnosis {
+  clip-path: polygon(
+    0px 0px,
+    5.11% 2.22%,
+    10.64% 4.19%,
+    16.79% 5.21%,
+    25.4% 5.87%,
+    46.37% 4.97%,
+    57.03% 5.34%,
+    66.57% 6.6%,
+    74.74% 8.91%,
+    83.91% 10.72%,
+    90.64% 12%,
+    100% 13%,
+    100% 96%,
+    89.83% 95.12%,
+    77.54% 93.88%,
+    71.15% 93.75%,
+    65.84% 93.69%,
+    59.75% 93.91%,
+    52.23% 94.52%,
+    43.71% 95.58%,
+    36.67% 96%,
+    27.72% 95.49%,
+    18.38% 94.58%,
+    0px 92%
+  );
+}
+
+/* swiper */
+.swiper {
+  height: 800px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px !important;
+}
+.thumbnail-title {
+  font-size: 20px;
 }
