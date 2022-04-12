@@ -45,7 +45,12 @@ module.exports = {
       europa: ['Europa', ...defaultTheme.fontFamily['serif']],
       moret: ['Moret', ...defaultTheme.fontFamily['serif']],
     },
-    extend: {},
+
+    extend: {
+      content: {
+        empty: '""',
+      },
+    },
   },
   plugins: [],
 };
