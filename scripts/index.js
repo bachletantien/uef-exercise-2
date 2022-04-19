@@ -1,16 +1,4 @@
-$('.slider').slick({
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  centerMode: true,
-  centerPadding: '20px',
-  slidesToShow: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  prevArrow: $('.prev'),
-  nextArrow: $('.next'),
-});
+// const sliderValues = document.querySelector('.slider-values');
 
 // ---------------------  ARRAY -----------------------------
 const dataFilter = [
@@ -41,6 +29,7 @@ const products = [
   {
     bagde: 'NEW',
     imgProduct: '../assets/images/product-2.webp',
+    secondaryImg: '../assets/images/product-hover-1.webp',
     tags: ['Moisturizes', 'Nourrishes', 'Protects', 'Regenerates'],
     title: 'La Crème Beau Jour',
     price: 49.0,
@@ -51,6 +40,7 @@ const products = [
   {
     bagde: 'NEW',
     imgProduct: '../assets/images/product-1.webp',
+    secondaryImg: '../assets/images/product-hover-2.webp',
     tags: ['Nourrishes', 'Plumps', 'Regenerates', 'Repairs'],
     title: 'Addiction',
     price: 69.0,
@@ -61,6 +51,7 @@ const products = [
   {
     bagde: 'Best Seller',
     imgProduct: '../assets/images/product-3.webp',
+    secondaryImg: '../assets/images/product-hover-3.webp',
     tags: ['Purifies', 'Regulates', 'Tightens', 'pores'],
     title: 'La Crème Beau Jour',
     price: 31.0,
@@ -71,6 +62,7 @@ const products = [
   {
     bagde: 'NEW',
     imgProduct: '../assets/images/product-4.webp',
+    secondaryImg: '../assets/images/product-hover-4.webp',
     tags: ['Nourrishes', 'Regulates'],
     title: 'La Crème Beau Jour',
     price: 38.0,
@@ -81,6 +73,7 @@ const products = [
   {
     bagde: 'Best Seller',
     imgProduct: '../assets/images/product-5.webp',
+    secondaryImg: '../assets/images/product-hover-5.webp',
     tags: ['Firms', 'Smoothes'],
     title: 'La Crème du Temps',
     price: 62.0,
@@ -91,6 +84,7 @@ const products = [
   {
     bagde: 'NEW',
     imgProduct: '../assets/images/product-6.webp',
+    secondaryImg: '../assets/images/product-hover-6.webp',
     tags: ['Nourrishes', 'Repairs'],
     title: 'Le Baume',
     price: 15.0,
@@ -227,11 +221,179 @@ const footerContent = [
   },
 ];
 
+const headerMenu = [
+  {
+    title: 'New',
+    items: [],
+    blogs: [],
+  },
+  {
+    title: 'Face',
+    items: [
+      {
+        titleLv2: 'Selections',
+        itemsLv2: [
+          'The Chaga Trio — Maison Loüno',
+          'Our best sellers',
+          'Special offers',
+          'Sets and limited editions',
+          "Men's favotites",
+          'The minis',
+          'Vegan',
+        ],
+      },
+      {
+        titleLv2: 'Products',
+        itemsLv2: [
+          'Cleansers & makeup removers',
+          'Toners & botanical waters',
+          'Moisturizers',
+          'Serums & treatments',
+          'Oils',
+          'Masks & exfoliants',
+          'Lip care',
+          'Eye care',
+          'Face tools',
+          'Gift card',
+          'Herbal teas',
+        ],
+      },
+      {
+        titleLv2: 'Needs & Skin moods',
+        itemsLv2: [
+          {
+            titleLv3: 'Needs',
+            itemsLv3: ['Moisturize', 'Tone', 'Purify', 'Soothe'],
+          },
+          {
+            titleLv3: 'Skin moods',
+            itemsLv3: [
+              'Sensitive skin',
+              'Tired skin',
+              'Oily skin',
+              'Dry skin',
+              'Blemish-prone skin',
+            ],
+          },
+        ],
+      },
+    ],
+    blogs: [
+      {
+        title: 'NEW: your first pro-age cream',
+        image: '../assets/images/face-menu-1.webp',
+      },
+      {
+        title: 'Skin quiz in 3min',
+        image: '../assets/images/face-menu-2.webp',
+      },
+    ],
+  },
+  {
+    title: 'Body',
+    items: [
+      {
+        titleLv2: 'Products',
+        itemsLv2: [
+          'Cleanse',
+          'Scrub',
+          'Soap',
+          'Hand cream',
+          'Film & tone',
+          'Moisturizers',
+          'Gift card',
+        ],
+      },
+      {
+        titleLv2: 'Needs & Skin moods',
+        itemsLv2: [
+          {
+            titleLv3: 'Needs',
+            itemsLv3: ['Moisturize', 'Film  & tone'],
+          },
+          {
+            titleLv3: 'Skin moods',
+            itemsLv3: ['Sensitive skin', 'Dry skin'],
+          },
+        ],
+      },
+    ],
+    blogs: [
+      {
+        title: 'Special offer for soft and gentle hands',
+        image: '../assets/images/body-menu-1.webp',
+      },
+    ],
+  },
+  {
+    title: 'Makeup',
+    items: [
+      {
+        titleLv2: 'Products',
+        itemsLv2: [
+          'Concealer',
+          'Foundation',
+          'Black mascara',
+          'Black liner',
+          'Lipsticks',
+          'Gloss',
+          'Setting powder',
+          'Eyeshadow pencils',
+          'Gift card',
+          'special offers',
+        ],
+      },
+      {
+        titleLv2: 'Needs',
+        itemsLv2: ['Lips', 'Face', 'Eyes'],
+      },
+    ],
+    blogs: [
+      {
+        title: 'Offer: The smoky Eye Trio',
+        image: '../assets/images/makeup-menu-1.webp',
+      },
+    ],
+  },
+  {
+    title: 'Rituals',
+    items: [],
+  },
+  {
+    title: 'About',
+    items: [],
+    blogs: [
+      {
+        title: 'Our story',
+        image: '../assets/images/about-menu-1.webp',
+      },
+      {
+        title: 'Our spa',
+        image: '../assets/images/about-menu-2.webp',
+      },
+      {
+        title: 'Loyalty and referral program',
+        image: '../assets/images/about-menu-3.webp',
+      },
+      {
+        title: 'Blog',
+        image: '../assets/images/about-menu-4.webp',
+      },
+      {
+        title: 'Our beautiful collaborations',
+        image: '../assets/images/about-menu-5.webp',
+      },
+    ],
+  },
+  {
+    title: 'Need help?',
+    items: [],
+  },
+];
+
 //=========================Component Tag ====================
 const items = document.querySelector('.items');
-
 dataFilter.forEach((item) => items.appendChild(Tag(item)));
-
 function Tag(name) {
   const tag = document.createElement('li');
   tag.className = 'data-item';
@@ -240,22 +402,98 @@ function Tag(name) {
 }
 
 //=========================Component Product Item ===========
-
-const productList = document.querySelector('.product-list');
+const swiperList = document.querySelector('.swiper-list');
+const productList = document.querySelector('.swiper-wrapper-item');
 products.forEach((item) => productList.appendChild(Product(item)));
 const productList2 = document.querySelector('.product-list-2');
 products.forEach((item) => productList2.appendChild(Product(item)));
+
+// function toggleSlider() {
+//   const widthCurrent = document.documentElement.clientWidth;
+
+//   if (widthCurrent > 1023) {
+//     productList.classList.add('swiper-wrapper');
+//     swiperList.classList.add('swiper');
+//     const swipperList = new Swiper('.swiper-list', {
+//       slidesPerView: 3,
+//       scrollbar: {
+//         el: '.swiper-scrollbar-list',
+//         hide: false,
+//         dragSize: 300,
+//       },
+//       loop: true,
+//       centeredSlides: true,
+//       navigation: {
+//         nextEl: '.swipper-product-next',
+//         prevEl: '.swipper-product-prev',
+//       },
+//     });
+//   } else {
+//     productList.classList.remove('swiper-wrapper');
+//     swiperList.className = 'product-list';
+//   }
+// }
+// function toggleCss() {
+//   const currentWidth = document.documentElement.clientWidth;
+//   const css = document.getElementsByTagName('link')[2];
+//   if (currentWidth > 1023) {
+//     css.setAttribute(
+//       'href',
+//       'https://unpkg.com/swiper@8/swiper-bundle.min.css'
+//     );
+//     const swipperList = new Swiper('.swiper-list', {
+//       slidesPerView: 3,
+//       scrollbar: {
+//         el: '.swiper-scrollbar-list',
+//         hide: false,
+//         dragSize: 300,
+//       },
+//       loop: true,
+//       centeredSlides: true,
+//       navigation: {
+//         nextEl: '.swipper-product-next',
+//         prevEl: '.swipper-product-prev',
+//       },
+//     });
+//   } else {
+//     css.setAttribute('href', '');
+//   }
+// }
+// window.addEventListener('DOMContentLoaded', toggleCss);
+// window.addEventListener('resize', toggleCss);
+
 // -----------------------------------------------------------
 function Product(data) {
-  const { bagde, imgProduct, tags, price, title, desc, rating, review } = data;
+  const {
+    bagde,
+    imgProduct,
+    secondaryImg,
+    tags,
+    price,
+    title,
+    desc,
+    rating,
+    review,
+  } = data;
   const product = document.createElement('div');
-  product.innerHTML = `<a class="relative" href="#">
-              <img
-                style= 'width: 100%'
+  product.className = 'swiper-slide swiper-slide-product';
+  product.innerHTML = `
+            <a class="relative" href="#">
+              <div class="product-item ">
+                <img
+                class="primary-img"
                 src='${imgProduct}'
                 alt="product"
-              />
-              <p class="product-tag">${bagde}</p>
+                />
+                <img
+                class="secondary-img"
+                src='${secondaryImg}'
+                alt="productHover"
+                />
+                <div class="product-bagde">
+                  <p class="product-tag">${bagde}</p>
+                </div>
+              </div>
             </a>
             <!-- product details -->
             <div class="product-details">
@@ -274,14 +512,14 @@ function Product(data) {
                 <span class="product-rating">${rating}</span>
                 <p class="product-review">${review} reviews</p>
               </div>
-            </div>`;
+            </div>
+            `;
   return product;
 }
 
-//=========================Component Footer ==================
+//=========================Component Footer ==================//
 const footerItems = document.querySelector('.footer-items');
 footerContent.forEach((item) => footerItems.appendChild(FooterItem(item)));
-
 function FooterItem(data) {
   const { title, items } = data;
   const item = document.createElement('li');
@@ -294,49 +532,52 @@ function FooterItem(data) {
   return item;
 }
 
-// ========================= Thumbnail slider ===============================
-const swiperWrapper = document.querySelector('.swiper-wrapper');
+// ========================= Thumbnail slider ===============================//
+const swiperWrapper = document.querySelector('.swiper-wrapper-thumbnails');
 thumbnailsSlider.forEach((item) => swiperWrapper.appendChild(Thumbnail(item)));
-
 function Thumbnail(data) {
   const { bgColor, number, title, image, descItem } = data;
   const thubnail = document.createElement('div');
-  thubnail.className = 'swiper-slide';
+  thubnail.className = 'swiper-slide swiper-slide-item';
   thubnail.innerHTML = `
-            <div style="background-color:${bgColor}; height: 450px; border-radius: 10px" class="px-7 py-8 text-center">
+            <div style="background-color:${bgColor};" class="wrapper-content">
               <span>n°${number}</span>
               <a href=""><h2 class = "thumbnail-title">${title}</h2></a>
-              <a href="" class="flex justify-center items-center gap-3 ">
-                <span>Read more</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="22.25" height="7.222" viewBox="0 0 22.25 7.222">
-                  <path class="a" d="M.5 3.75h16"
-                    fill="none" stroke-linecap="square"
-                    stroke="#1d1d1b" stroke-miterlimit="10">
-                  </path>
-                  <path class="b" d="M15.573 3.612H22c-3.542 0-8 3.361-8 3.361zm0 0L14 .25s4.459 3.362 8 3.362z"
-                    fill="#1d1d1b" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" stroke="#1d1d1b"
-                    stroke-miterlimit="10">
-                  </path>
-                </svg>
-              </a>
-              <div>
-                <img
-                  class="block w-full"
-                  src="${image}"
-                  alt=""
-                />
+
+              <div class="wrapper-content-thumbnail">
+                <div class="img-thumbnail">
+                  <img
+                    class="block w-full"
+                    src="${image}"
+                    alt=""
+                  />
+                </div>
+                <div class="desc-thumbnail">
+                  ${descItem}
+
+                  <div class="btn-readmore">
+                    <span>Read more</span>
+                    <img src="../assets/svgs/arrow.svg" alt="" />
+                  </div>
+                </div>
               </div>
+               <a href="" class="btn-readmore btn-readmore-thumbnail">
+                <span>Read more</span>
+                <img src="../assets/svgs/arrow.svg" alt="" />
+              </a>
             </div>
   `;
   return thubnail;
 }
 
-//======================= Collapse
+//======================= Collapse ============================//
 const collapse = document.querySelectorAll('.block-contact-title');
-
 collapse.forEach((item) => {
   item.addEventListener('click', function () {
     this.classList.toggle('footer-active');
+    toggleActive();
+    window.addEventListener('DOMContentLoaded', toggleActive);
+    window.addEventListener('resize', toggleActive);
 
     const content = this.nextElementSibling;
     const items = Array.from(content.children);
@@ -353,7 +594,257 @@ collapse.forEach((item) => {
       content.style.marginTop = 0;
     } else {
       content.style.height = `${height}px`;
-      content.style.marginTop = '16px';
+      // content.style.marginTop = '16px';
     }
   });
 });
+
+function toggleActive() {
+  const widthCurrent = document.documentElement.clientWidth;
+  if (widthCurrent > 1023) {
+    collapse.forEach((item) => item.classList.remove('footer-active'));
+  }
+}
+window.addEventListener('DOMContentLoaded', toggleActive);
+window.addEventListener('resize', toggleActive);
+
+// ====================== SCROLL TO TOP =======================//
+const goTop = document.getElementById('goTop');
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 700 ||
+    document.documentElement.scrollTop > 700
+  ) {
+    goTop.style.display = 'block';
+  } else {
+    goTop.style.display = 'none';
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// ==================== MEGA MENU ===========================//
+const hamburger = document.querySelector('.hamburger');
+const megaMenu = document.querySelector('.mega-menu');
+
+const menuwrapper = document.createElement('div');
+menuwrapper.className = 'menu-wrapper';
+menuwrapper.innerHTML = `
+    <div class = 'menu-lv1'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position: absolute; pointer-events: none;">
+      <defs>
+        <clipPath id="mask-mobile-menu-2" clipPathUnits="objectBoundingBox" transform="scale(0.0075875988284747 0.17537706068046)">
+          <path d="M0 3.801V0l1.521.343c4.194.945 8.015 1.043 37.637.964 28.85-.077 39.343.097 53.446.886 12.372.692 25.376 1.79 35.322 2.98l3.704.445.082.992.082.992H0z"></path>
+        </clipPath>
+      </defs>
+      </svg>
+      <a href="#">
+      <div class="mega-menu-image">
+        <img src="../assets/images/mini-menu.webp" alt="" />
+      </div>
+      <div class="flex justify-center">
+        <h2 class=" title-mega-menu">New</h2>
+      </div>
+      </a>
+      <div class="mask-bottom-menu"></div>
+    </div>
+    <div class="connection">
+        <h4>Connection</h4>
+        <div class="better-select">
+          <span>Order in</span>
+          <better-select>
+            <a class="select-language" href="#">EN</a>
+            <ul class="both-language">
+              <li class="language">FR</li>
+              <li class="language">EN</li>
+            </ul>
+          </better-select>
+        </div>
+    </div>
+  `;
+function toggleMenu() {
+  hamburger.classList.toggle('hamburger-active');
+  menuwrapper.classList.toggle('menu-wrapper-active');
+  subMenu.classList.remove('sub-menu-wrapper-active');
+  subMenu2.classList.remove('sub-menu2-wrapper-active');
+  hamburgerLine.forEach((item) => (item.style.background = '#fff'));
+  document.body.style.overflowY = 'auto';
+}
+
+hamburger.addEventListener('click', toggleMenu);
+
+megaMenu.appendChild(menuwrapper);
+
+const selectLanguage = document.querySelector('.select-language');
+selectLanguage.addEventListener('click', () => {
+  const bothLanguage = document.querySelector('.both-language');
+  bothLanguage.classList.toggle('both-language-active');
+});
+
+// ================= component MENU ITEM ====================//
+const menuLv1 = document.querySelector('.menu-lv1');
+headerMenu.forEach((item) => {
+  menuLv1.appendChild(MenuItem(item));
+});
+
+function MenuItem(data) {
+  const { title, items, blogs } = data;
+
+  const megaMenuItem = document.createElement('ul');
+  megaMenuItem.className = 'mega-menu-items';
+  megaMenuItem.innerHTML = `
+    <li class="menu-item">
+      <a href="#">${title}</a>
+      ${
+        items?.length > 0 || blogs?.length > 0
+          ? `<span class='arrow-menu'></span>`
+          : ''
+      }
+    </li>
+  `;
+  return megaMenuItem;
+}
+
+function SubMenuItemlv1(index) {
+  const { items, blogs, title } = headerMenu[index];
+  const megaMenuItem = document.createElement('ul');
+  megaMenuItem.className = 'mega-menu-items';
+  megaMenuItem.innerHTML = `
+    <h1 class="menu-title">${title}</h1>
+    <ul>
+      ${items
+        .map(
+          (item) => `
+          <li class="menu-item2">
+            <a href="#">${item.titleLv2}</a>
+            ${items?.length > 0 ? `<span class='arrow-menu'></span>` : ''}
+          </li>`
+        )
+        .join('')}
+    </ul>
+    <ul>
+     ${blogs
+       .map(
+         (item) => `
+            <li class="menu-blog">
+              <p class="menu-item2">${item.title}</p>
+              <img src="${item.image}" alt="" />
+            </li>`
+       )
+       .join('')}
+    </ul>
+
+  `;
+  return megaMenuItem;
+}
+
+function SubMenuItemlv2(index, index2) {
+  const { titleLv2, itemsLv2 } = headerMenu[index].items[index2];
+
+  const megaMenuItem2 = document.createElement('ul');
+  megaMenuItem2.className = 'mega-menu-item2';
+  megaMenuItem2.innerHTML = `
+    <h1 class="menu-title">${titleLv2}</h1>
+    <ul class="menu-wrapper3">
+      ${itemsLv2
+        .map(
+          (item) => `
+        <li class="menu-item3">
+        ${
+          typeof item === 'object'
+            ? `<h2 class="menu-title-item">${item.titleLv3}</h2>
+              <ul>${item.itemsLv3
+                .map(
+                  (item2) =>
+                    `<li class="menu-sub-item3"><a href="#">${item2}</a></li>`
+                )
+                .join('')}</ul>`
+            : `<a href="#">${item}</a>`
+        }
+        </li>`
+        )
+        .join('')}
+
+    </ul>
+  `;
+
+  return megaMenuItem2;
+}
+
+// ==================== MENU LEVEL 2 (SUB MENU)========================//
+const subMenu = document.createElement('div');
+subMenu.className = 'sub-menu-wrapper';
+subMenu.innerHTML = `
+    <div class="btn-back">
+        <svg style={"transform: rotate(180deg)"} viewBox="0 0 22.25 7.222" width="22.25" height="7.222" xmlns="http://www.w3.org/2000/svg"><path d="M21.746 3.75h-16" fill="none" stroke="#1d1d1b" stroke-linecap="square" stroke-miterlimit="10"></path><path d="M6.673 3.612H.246c3.542 0 8 3.361 8 3.361zm0 0L8.246.25s-4.459 3.362-8 3.362z" fill="#1d1d1b" stroke="#1d1d1b" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path></svg>
+        <span>Retour au menu</span>
+    </div>
+    <ul></ul>
+`;
+
+const subMenu2 = document.createElement('div');
+subMenu2.className = 'sub-menu2-wrapper';
+subMenu2.innerHTML = `
+    <div class="btn-back2">
+        <svg style={"transform: rotate(180deg)"} viewBox="0 0 22.25 7.222" width="22.25" height="7.222" xmlns="http://www.w3.org/2000/svg"><path d="M21.746 3.75h-16" fill="none" stroke="#1d1d1b" stroke-linecap="square" stroke-miterlimit="10"></path><path d="M6.673 3.612H.246c3.542 0 8 3.361 8 3.361zm0 0L8.246.25s-4.459 3.362-8 3.362z" fill="#1d1d1b" stroke="#1d1d1b" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path></svg>
+        <span>Retour au menu</span>
+    </div>
+    <ul></ul>
+`;
+
+menuwrapper.append(subMenu, subMenu2);
+const hamburgerLine = document.querySelectorAll('.hamburger-line');
+
+// select MENU ITEM
+const subMenuItem = document.querySelectorAll('.menu-item');
+subMenuItem.forEach((item, index) =>
+  item.addEventListener('click', function () {
+    if (!headerMenu[index].items.length && !headerMenu[index].blogs.length)
+      return;
+
+    subMenu.replaceChild(SubMenuItemlv1(index), subMenu.children[1]);
+    subMenu.classList.add('sub-menu-wrapper-active');
+    document.body.style.overflowY = 'hidden';
+
+    // select MENU ITEM 2
+    const subMenuItem2 = document.querySelectorAll('.menu-item2');
+    subMenuItem2.forEach((item, index2) =>
+      item.addEventListener('click', function () {
+        subMenu2.replaceChild(
+          SubMenuItemlv2(index, index2),
+          subMenu2.children[1]
+        );
+        subMenu2.classList.add('sub-menu2-wrapper-active');
+      })
+    );
+    if (
+      subMenu.classList.contains('sub-menu-wrapper-active') ||
+      subMenu2.classList.contains('sub-menu2-wrapper-active')
+    ) {
+      hamburgerLine.forEach((item) => (item.style.background = '#000'));
+    }
+  })
+);
+
+const btnBack = document.querySelector('.btn-back');
+btnBack.addEventListener('click', function () {
+  subMenu.classList.remove('sub-menu-wrapper-active');
+  document.body.style.overflowY = 'hidden';
+  hamburgerLine.forEach((item) => (item.style.background = '#fff'));
+});
+const btnBack2 = document.querySelector('.btn-back2');
+btnBack2.addEventListener('click', function () {
+  subMenu2.classList.remove('sub-menu2-wrapper-active');
+  document.body.style.overflowY = 'hidden';
+});
+
+// ==================== MENU LEVEL 3 (SUB MENU)========================//

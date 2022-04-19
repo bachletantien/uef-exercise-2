@@ -5,21 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/index.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
-      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
-      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="icon" href="./assets/svgs/favicon.ico" />
 
     <!-- swiper.js library -->
     <link
@@ -29,41 +15,35 @@
 
     <title>Absolution-Cosmetics</title>
   </head>
-  <body>
+  <body class="laptop:relative">
     <!-- https://www.absolution-cosmetics.com/en/ -->
 
-    <!--================= HERO ================= -->
-    <section class="h-screen w-screen">
-      <div class="relative h-screen">
-        <img
-          class="po absolute h-full w-full object-cover"
-          src="./assets/images/home-bg.png"
-          alt=""
-        />
-
+    <!-- SECTION HEADER -->
+    <header class="fixed top-0 z-20 w-full laptop:absolute">
+      <div class="mega-menu">
+        <div class="relative">
+          <p
+            class="relative pt-[16px] pb-[12px] text-center text-md text-white"
+          >
+            Free international delivery above €100
+          </p>
+          <object
+            type="image/svg+xml"
+            data="./assets/svgs/line.svg"
+            class="absolute text-white"
+          >
+            <!-- fallback image in CSS -->
+          </object>
+        </div>
         <div class="padding-page">
-          <div class="relative">
-            <p
-              class="relative pt-[16px] pb-[12px] text-center text-md text-white"
-            >
-              Free international delivery above €100
-            </p>
-            <object
-              type="image/svg+xml"
-              data="./assets/svgs/line.svg"
-              class="text-white"
-            >
-              <!-- fallback image in CSS -->
-            </object>
-          </div>
           <div class="relative flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <div class="flex h-12 flex-col justify-center gap-1">
+              <div class="hamburger">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
               </div>
-              <div>
+              <div class="flex h-12 justify-center">
                 <object
                   data="./assets/svgs/search.svg"
                   class="text-white"
@@ -89,16 +69,38 @@
               </svg>
             </div>
           </div>
+        </div>
+      </div>
+    </header>
+
+    <!--================== SECTION HERO =======================-->
+    <section class="h-screen w-screen laptop:relative laptop:h-[66vh]">
+      <div
+        class="relative flex h-screen flex-col justify-center laptop:absolute laptop:h-full laptop:w-screen laptop:justify-start"
+      >
+        <img
+          class="absolute h-full w-full object-cover laptop:hidden"
+          src="./assets/images/home-bg.png"
+          alt=""
+        />
+        <video
+          data-lazy-video
+          loop
+          muted
+          src="./assets/videos/home-page-video.mp4"
+          class="absolute hidden h-auto w-full object-cover laptop:block"
+        ></video>
+
+        <div class="padding-page">
           <!-- new -->
-          <div
-            class="relative flex flex-col items-center gap-3 px-10 pt-40 text-center"
-          >
+          <div class="new-content">
             <p>New</p>
-            <h1>La Crème Beau Jour</h1>
-            <div
-              class="0.3s hover: w-full rounded-full border border-primary p-5 outline-none transition hover:bg-primary hover:text-white"
-            >
-              <a class="flex w-full items-center justify-center gap-3" href="#">
+            <h1 class="laptop:mb-5">La Crème Beau Jour</h1>
+            <div class="btn-new">
+              <a
+                class="flex w-full items-center justify-center gap-3 laptop:w-fit"
+                href="#"
+              >
                 <span>Discover</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -139,38 +141,113 @@
       </div>
     </section>
 
-    <!--================ SLICK SLIDE ===================-->
-    <div class="padding-page">
-      <section class="relative w-full overflow-hidden">
-        <div class="flex w-[100vw] px-5 py-8">
-          <div
-            style="animation: marquee 7s linear infinite"
-            class="marquee__inner"
-            aria-hidden="true"
-          >
-            <h2 class="inline-block px-2 text-center">
-              Our products are organic, unisex and made in France with love!
-            </h2>
-          </div>
+    <!--================== SECTION SLICK SLIDE ================-->
+    <section class="relative w-full overflow-hidden">
+      <div class="flex w-[100vw] px-5 pt-8 pb-12">
+        <div
+          style="animation: marquee 7s linear infinite"
+          class="marquee__inner"
+          aria-hidden="true"
+        >
+          <h2 class="inline-block px-2 text-center">
+            Our products are organic, unisex and made in France with love!
+          </h2>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <!--============= svg border ====================-->
+    <!--================== svg border =========================-->
     <section>
       <div class="svg-border-1"></div>
     </section>
 
-    <!--================ section home product ===================-->
+    <!--================== SECTION home product ===============-->
     <div class="padding-page">
       <section class="relative pt-20 pb-[5px]">
-        <div class="mb-[5rem] flex flex-col gap-3 text-center">
+        <div class="mb-[5rem] flex flex-col gap-3 text-center laptop:text-left">
           <p>Special selection for dry skin</p>
           <h2 class="title">Natural and certified-organic skincare</h2>
         </div>
 
         <!-- products -->
-        <div class="product-list grid grid-cols-2 gap-x-3 gap-y-[3rem]"></div>
+        <div class="product-list swiper swiper-list">
+          <div class="swiper-wrapper swiper-wrapper-item"></div>
+          <div class="scrollbar-bottom">
+            <div class="swiper-scrollbar-list h-[1px] w-full bg-gray"></div>
+            <!-- btn next and prev -->
+            <div class="flex gap-4">
+              <div class="swipper-product-prev">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22.25"
+                  height="7.222"
+                  viewBox="0 0 22.25 7.222"
+                  style="transform: rotate(180deg)"
+                  class="h-3 w-6 text-gray-dark duration-150 hover:text-primary"
+                >
+                  <g transform="translate(0.5 0.25)">
+                    <path
+                      style="
+                        fill: none;
+                        stroke-linecap: square;
+                        stroke: currentColor;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M.5.5h16"
+                      transform="translate(-0.5 3)"
+                    ></path>
+                    <path
+                      style="
+                        fill: currentColor;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 0.5px;
+                        stroke: currentColor;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
+                      transform="translate(13.5)"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="swipper-product-next">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22.25"
+                  height="7.222"
+                  viewBox="0 0 22.25 7.222"
+                  class="h-3 w-6 text-gray-dark duration-150 hover:text-primary"
+                >
+                  <g transform="translate(0.5 0.25)">
+                    <path
+                      style="
+                        fill: none;
+                        stroke-linecap: square;
+                        stroke: currentColor;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M.5.5h16"
+                      transform="translate(-0.5 3)"
+                    ></path>
+                    <path
+                      style="
+                        fill: currentColor;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 0.5px;
+                        stroke: currentColor;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
+                      transform="translate(13.5)"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- btn see all -->
         <div
           class="col-span-2 mt-10 rounded-full border border-primary py-4 text-primary"
@@ -219,10 +296,12 @@
       </section>
     </div>
 
-    <!--=============== SECTION home values ================-->
+    <!--================== SECTION home values ================-->
     <div class="padding-page-lg">
-      <section class="mt-10">
-        <h2 class="mb-9 text-center leading-normal">
+      <section class="mx-auto mt-10 w-full max-w-[760px]">
+        <h2
+          class="mb-9 text-center leading-normal laptop:!mb-[78px] laptop:!text-[50px]"
+        >
           Our Absolution products are certified
           <span class="text-animate"
             >organic
@@ -428,14 +507,14 @@
       </section>
     </div>
 
-    <!--=============== SECTION sliders values ================-->
-    <section class="relative mb-12 flex overflow-x-hidden">
-      <div class="mx-auto flex min-w-[300px] justify-center overflow-x-hidden">
-        <div class="slider flex min-w-[370px] text-center">
-          <div class="px-10">
+    <!--================== SECTION sliders values =============-->
+    <div class="mx-auto w-full min-w-[300px] max-w-[680px]">
+      <section class="swiper swiper-values">
+        <div class="swiper-wrapper swiper-wrapper-value">
+          <div class="swiper-slide swiper-slide-value">
             <div class="mb-2">
               <img
-                class="w-full"
+                class="img-swipper"
                 src="./assets/images/value-slider-1.webp"
                 alt=""
               />
@@ -447,10 +526,10 @@
               legislation.
             </div>
           </div>
-          <div class="px-10">
+          <div class="swiper-slide swiper-slide-value">
             <div class="mb-2">
               <img
-                class="w-full"
+                class="img-swipper"
                 src="./assets/images/value-slider-2.webp"
                 alt=""
               />
@@ -463,10 +542,10 @@
               surfactants, aluminum salts or petrochemicals.
             </div>
           </div>
-          <div class="px-10">
+          <div class="swiper-slide swiper-slide-value">
             <div class="mb-2">
               <img
-                class="w-full"
+                class="img-swipper"
                 src="./assets/images/value-slider-3.webp"
                 alt=""
               />
@@ -481,96 +560,133 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="prev absolute top-1/2 left-5 cursor-pointer">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="22.25"
-          height="7.222"
-          viewBox="0 0 22.25 7.222"
-          style="transform: rotateY(180deg)"
+        <div
+          class="prev absolute top-1/2 left-2 z-50 cursor-pointer laptop:hidden"
         >
-          <g transform="translate(0.5 0.25)">
-            <path
-              class="a"
-              style="
-                fill: none;
-                stroke-linecap: square;
-                stroke: #1d1d1b;
-                stroke-miterlimit: 10;
-              "
-              d="M.5.5h16"
-              transform="translate(-0.5 3)"
-            ></path>
-            <path
-              class="b"
-              style="
-                fill: #1d1d1b;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-width: 0.5px;
-                stroke: #1d1d1b;
-                stroke-miterlimit: 10;
-              "
-              d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
-              transform="translate(13.5)"
-            ></path>
-          </g>
-        </svg>
-      </div>
-      <div class="next absolute top-1/2 right-5 cursor-pointer">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="22.25"
-          height="7.222"
-          viewBox="0 0 22.25 7.222"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22.25"
+            height="7.222"
+            viewBox="0 0 22.25 7.222"
+            style="transform: rotateY(180deg)"
+          >
+            <g transform="translate(0.5 0.25)">
+              <path
+                class="a"
+                style="
+                  fill: none;
+                  stroke-linecap: square;
+                  stroke: #1d1d1b;
+                  stroke-miterlimit: 10;
+                "
+                d="M.5.5h16"
+                transform="translate(-0.5 3)"
+              ></path>
+              <path
+                class="b"
+                style="
+                  fill: #1d1d1b;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 0.5px;
+                  stroke: #1d1d1b;
+                  stroke-miterlimit: 10;
+                "
+                d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
+                transform="translate(13.5)"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div
+          class="next absolute top-1/2 right-2 z-50 cursor-pointer laptop:hidden"
         >
-          <g transform="translate(0.5 0.25)">
-            <path
-              class="a"
-              style="
-                fill: none;
-                stroke-linecap: square;
-                stroke: #1d1d1b;
-                stroke-miterlimit: 10;
-              "
-              d="M.5.5h16"
-              transform="translate(-0.5 3)"
-            ></path>
-            <path
-              class="b"
-              style="
-                fill: #1d1d1b;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-width: 0.5px;
-                stroke: #1d1d1b;
-                stroke-miterlimit: 10;
-              "
-              d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
-              transform="translate(13.5)"
-            ></path>
-          </g>
-        </svg>
-      </div>
-    </section>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22.25"
+            height="7.222"
+            viewBox="0 0 22.25 7.222"
+          >
+            <g transform="translate(0.5 0.25)">
+              <path
+                class="a"
+                style="
+                  fill: none;
+                  stroke-linecap: square;
+                  stroke: #1d1d1b;
+                  stroke-miterlimit: 10;
+                "
+                d="M.5.5h16"
+                transform="translate(-0.5 3)"
+              ></path>
+              <path
+                class="b"
+                style="
+                  fill: #1d1d1b;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 0.5px;
+                  stroke: #1d1d1b;
+                  stroke-miterlimit: 10;
+                "
+                d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
+                transform="translate(13.5)"
+              ></path>
+            </g>
+          </svg>
+        </div>
+      </section>
+    </div>
 
-    <!-- ================ Section HOME MEDIA ==================== -->
-    <section class="mb-12 h-screen w-screen">
-      <div class="relative h-full w-full">
-        <img
-          class="hero-media w-full"
-          src="./assets/images/home-media.webp"
-          alt=""
-        />
+    <!-- ================= SECTION HOME MEDIA =================-->
+    <section class="relative mb-12 w-screen">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="0"
+        height="0"
+        style="position: absolute; pointer-events: none"
+      >
+        <defs>
+          <clipPath
+            id="mask-front-media-mobile-top"
+            clipPathUnits="objectBoundingBox"
+            transform="scale(0.0037757506192231 0.039342198442049)"
+          >
+            <path
+              d="M47.36 23.272C33.618 22.97 17.145 22.11 4.638 21.04c-2.324-.198-4.318-.304-4.431-.233-.114.07-.207-4.583-.207-10.34V0h264.848v2.778c0 2.421-.057 2.778-.443 2.778-1.693 0-26.849 2.79-42.816 4.75-14.233 1.746-21.111 2.56-31.354 3.714-3.856.434-9.63 1.09-12.832 1.46-11.032 1.268-36.103 3.722-49.874 4.881-29.792 2.507-55.723 3.449-80.169 2.911z"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="0"
+        height="0"
+        style="position: absolute; pointer-events: none"
+      >
+        <defs>
+          <clipPath
+            id="mask-front-media-mobile-bottom"
+            clipPathUnits="objectBoundingBox"
+            transform="scale(0.0037833072915681 0.12192148256523)"
+          >
+            <path
+              d="M0 5.334V2.466l7.584-.174c11.235-.26 80.51-.205 105.922.082 21.962.249 26.514.325 48.287.804 40.562.894 83.755 2.121 98.755 2.806l3.77.173v2.045H0z"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <div class="mask-media-top"></div>
+      <div class="h-full w-full">
+        <img class="hero-media" src="./assets/images/home-media.webp" alt="" />
         <div
           class="absolute top-1/2 flex w-full flex-col items-center justify-center gap-6 text-center text-white"
         >
           <a href="#"><p>Your first pro-aging care</p></a>
           <a href="#"><h2>La Crème Beau Jour</h2></a>
           <div
-            class="w-5/6 rounded-full border border-white p-5 outline-none duration-300 hover:bg-white hover:text-primary"
+            class="w-5/6 rounded-full border border-white p-5 outline-none duration-300 hover:bg-white hover:text-primary laptop:w-full laptop:min-w-[250px]"
           >
             <a class="flex w-full items-center justify-center gap-3" href="#">
               <span>Discover</span>
@@ -610,38 +726,189 @@
           </div>
         </div>
       </div>
+      <div class="mask-media-bottom"></div>
     </section>
 
-    <!-- ================= SECTION PRODUCT IN CATEGORY ====================== -->
+    <!-- ================= SECTION PRODUCT IN CATEGORY ========-->
     <div class="padding-page">
       <section class="my-10">
-        <div>
+        <div class="laptop:grid laptop:grid-cols-12">
           <!-- text content -->
-          <div class="text-center">
+          <div class="text-center laptop:col-span-4 laptop:mr-4">
             <div class="category-title">Skincare</div>
             <h2 class="mb-12">
               You're unique – and so is your skin. So treat it to personalized
               care!
             </h2>
             <ul
-              class="items flex w-[104%] gap-3 overflow-x-auto whitespace-nowrap pl-[90px]"
+              class="items flex w-[104%] gap-3 overflow-x-auto whitespace-nowrap pl-[90px] laptop:w-[100%] laptop:flex-wrap laptop:pl-0"
             ></ul>
           </div>
           <!-- product list -->
-          <div
-            class="product-list-2 mt-5 grid grid-cols-2 gap-x-3 gap-y-[3rem]"
-          ></div>
-          <!-- btn see all -->
-          <div
-            class="mt-10 rounded-full border border-primary py-4 text-primary"
+          <div class="laptop:col-span-7 laptop:col-start-6">
+            <div
+              class="product-list-2 mt-5 grid grid-cols-2 gap-x-3 gap-y-[3rem]"
+            ></div>
+            <!-- btn see all -->
+            <div
+              class="mt-10 rounded-full border border-primary py-4 text-primary duration-100 hover:bg-primary hover:text-white laptop:w-full laptop:max-w-[320px] laptop:text-md laptop:font-light"
+            >
+              <a
+                class="flex items-center justify-center gap-x-3 font-europa"
+                href="#"
+              >
+                <span>All our skincare products</span>
+                <div class="text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22.25"
+                    height="7.222"
+                    viewBox="0 0 22.25 7.222"
+                  >
+                    <g transform="translate(0.5 0.25)">
+                      <path
+                        style="
+                          fill: none;
+                          stroke-linecap: square;
+                          stroke: #000;
+                          stroke-miterlimit: 10;
+                        "
+                        d="M.5.5h16"
+                        transform="translate(-0.5 3)"
+                      ></path>
+                      <path
+                        class="b"
+                        style="
+                          fill: 'currentColor';
+                          stroke-linecap: round;
+                          stroke-linejoin: round;
+                          stroke-width: 0.5px;
+                          stroke: 'currentColor';
+                          stroke-miterlimit: 10;
+                        "
+                        d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
+                        transform="translate(13.5)"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- products section -->
+      </section>
+    </div>
+
+    <!-- ================= SECTION FRONT Diagnosis ============-->
+    <section class="section-diagnosis">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="0"
+        height="0"
+        style="position: absolute; pointer-events: none"
+      >
+        <defs>
+          <clipPath
+            id="mask-diag-top"
+            clipPathUnits="objectBoundingBox"
+            transform="scale(0.0019664561903058 0.077561467462964)"
           >
+            <path
+              d="M0 0h508.53c-.016 3.378-.012 6.733-.032 10.111l-.252.002-6.796-.196c-11.28-.325-113.164-.26-136.854.087-21.64.317-41.172.735-70.247 1.501-74.398 1.962-115.942 1.857-156.766-.397-11.909-.658-16.225-.988-37.967-2.908-23.763-2.098-44.78-3.688-59.4-4.494-10.915-.602-26.98-1.302-33.266-1.492L.001 2.005 0 0z"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="0"
+        height="0"
+        style="position: absolute; pointer-events: none"
+      >
+        <defs>
+          <clipPath
+            id="mask-diag-bottom"
+            clipPathUnits="objectBoundingBox"
+            transform="scale(0.0019674775953489 0.15117157974301)"
+          >
+            <path
+              d="M0 4.209V1.803l3.638.162c8.257.367 47.052 1.397 70.18 1.863 42.395.855 60.09 1.036 102.791 1.051 46.487.016 49.204-.024 99.484-1.465 15.75-.452 27.44-.564 72.363-.69 57.236-.16 100.794.171 150.217 1.144l9.062.178.271.02.265-.009-.007 2.558H0z"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="0"
+        height="0"
+        style="position: absolute; pointer-events: none"
+      >
+        <defs>
+          <clipPath
+            id="mask-diag-top-mobile"
+            clipPathUnits="objectBoundingBox"
+            transform="scale(0.0037745107290467 0.035807641350664)"
+          >
+            <path
+              d="M264.749 21.224l-.166-.027-.86-.138c-4.879-.782-50.201-1.109-63.698-.46-18.125.873-23.087 1.315-50.8 4.53-9.974 1.156-14.571 1.61-23.416 2.31-7.361.582-27.006.664-32.279.134-15.836-1.591-25.632-4.04-39.555-9.892-14.398-6.05-23.765-9.27-35.322-12.143C12.787 4.08 4.72 2.485 1.858 2.22L0 2.047V.007h132.424L264.934 0v21.248l-.055-.003z"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="0"
+        height="0"
+        style="position: absolute; pointer-events: none"
+      >
+        <defs>
+          <clipPath
+            id="mask-diag-bottom-mobile"
+            clipPathUnits="objectBoundingBox"
+            transform="scale(0.0037757506192231 0.09904912836767)"
+          >
+            <path
+              d="M0 5.048V0l.728.145c.4.08 3.406.503 6.68.941 32.183 4.304 62.82 6.63 87.269 6.628 15.175 0 27.017-.909 43.17-3.308 7.145-1.061 18.04-1.94 31.447-2.534 7.99-.355 39.566-.186 49.384.263 11.98.55 32.165 1.821 40.35 2.543 2.4.211 4.573.386 4.828.388l.992.04v4.99H0z"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <div class="mask-top"></div>
+      <div
+        class="mask-middle padding-page bg-pink-lightest pb-[100px] laptop:grid laptop:grid-cols-12 laptop:px-[120px] laptop:py-[100px]"
+      >
+        <div
+          class="pt-16 laptop:col-start-8 laptop:col-end-13 laptop:row-start-1"
+        >
+          <img
+            class="w-full laptop:h-[315px] laptop:w-[315px]"
+            src="./assets/images/diagnostic.webp"
+            alt=""
+          />
+        </div>
+        <div
+          class="flex flex-col justify-center laptop:col-span-6 laptop:col-start-1 laptop:row-start-1"
+        >
+          <p
+            class="pb-6 font-europa laptop:max-w-[400px] laptop:!text-sm laptop:!leading-tight"
+          >
+            Do you need a new tailored routine? Or simply want to make sure you
+            are using the right skincare?
+          </p>
+          <h2 class="mb-10 font-moret">Our skin quiz only takes 3 minutes!</h2>
+
+          <!-- btn see all -->
+          <div class="rounded-full border border-primary py-4 text-primary">
             <a
-              class="flex items-center justify-center gap-x-3 font-europa"
+              class="flex items-center justify-center gap-x-3 font-europa font-light"
               href="#"
             >
-              <span>All our skincare products</span>
+              <span class="laptop:hidden">Let's begin my diagnosis</span>
+              <span class="hidden laptop:block">Start the quiz</span>
               <div class="text-primary">
                 <svg
+                  class="text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="22.25"
                   height="7.222"
@@ -677,87 +944,33 @@
             </a>
           </div>
         </div>
-        <!-- products section -->
-      </section>
-    </div>
-
-    <!-- ================= SECTION FRONT Diagnosis ====================== -->
-    <section class="section-diagnosis h-screen bg-pink-lightest text-center">
-      <div class="padding-page">
-        <div class="pt-16">
-          <img class="w-full" src="./assets/images/diagnostic.webp" alt="" />
-        </div>
-        <p class="mb-6 font-europa">
-          Do you need a new tailored routine? Or simply want to make sure you
-          are using the right skincare?
-        </p>
-        <h2 class="mb-10 font-moret">Our skin quiz only takes 3 minutes!</h2>
-
-        <!-- btn see all -->
-        <div class="mt-10 rounded-full border border-primary py-4 text-primary">
-          <a
-            class="flex items-center justify-center gap-x-3 font-europa"
-            href="#"
-          >
-            <span>Let's begin my diagnosis</span>
-            <div class="text-primary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22.25"
-                height="7.222"
-                viewBox="0 0 22.25 7.222"
-              >
-                <g transform="translate(0.5 0.25)">
-                  <path
-                    style="
-                      fill: none;
-                      stroke-linecap: square;
-                      stroke: #000;
-                      stroke-miterlimit: 10;
-                    "
-                    d="M.5.5h16"
-                    transform="translate(-0.5 3)"
-                  ></path>
-                  <path
-                    class="b"
-                    style="
-                      fill: 'currentColor';
-                      stroke-linecap: round;
-                      stroke-linejoin: round;
-                      stroke-width: 0.5px;
-                      stroke: 'currentColor';
-                      stroke-miterlimit: 10;
-                    "
-                    d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
-                    transform="translate(13.5)"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-          </a>
-        </div>
       </div>
+      <div class="mask-bottom"></div>
     </section>
 
-    <!-- ================= SECTION MIX & MATCH ====================== -->
+    <!-- ================= SECTION MIX & MATCH ================-->
     <section>
       <div class="mix-max-content">
-        <div class="text-center">
-          <h2 class="mb-5">Mix & Max</h2>
-          <p class="mb-10 font-europa text-lg">
-            The skin is a very complex organ – an ecosystem that is constantly
-            adapting to the outside environment (sun, wind, pollution, cold,
-            etc.) but also to our inner state (heredity, diet, cigarette smoke,
-            mood, sleep, health, stress, hormones, etc.). So your skin is
-            unique. It reflects your emotions, your environment, your inner
-            self. Just like you, its needs change every day. Our Mix & Match
-            system allows you to match your skincare to your skin’s mood, every
-            day.
-          </p>
+        <div class="padding-page">
+          <div class="text-center">
+            <h2 class="mb-5">Mix & Max</h2>
+            <p
+              class="mb-10 font-europa text-md font-light laptop:mx-auto laptop:mb-[108px] laptop:w-full laptop:min-w-[450px]"
+            >
+              The skin is a very complex organ – an ecosystem that is constantly
+              adapting to the outside environment (sun, wind, pollution, cold,
+              etc.) but also to our inner state (heredity, diet, cigarette
+              smoke, mood, sleep, health, stress, hormones, etc.). So your skin
+              is unique. It reflects your emotions, your environment, your inner
+              self. Just like you, its needs change every day. Our Mix & Match
+              system allows you to match your skincare to your skin’s mood,
+              every day.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="swiper mySwiper relative">
-        <div class="swiper-wrapper relative"></div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper swiper-wrapper-thumbnails relative"></div>
         <!-- btn next and prev -->
         <div
           class="btn-switch absolute bottom-[14.5rem] z-10 ml-[50vw] flex -translate-x-1/2 gap-4"
@@ -769,27 +982,26 @@
               height="7.222"
               viewBox="0 0 22.25 7.222"
               style="transform: rotate(180deg)"
-              class="h-4 w-12 text-primary"
+              class="h-4 w-12 text-gray-dark duration-150 hover:text-primary"
             >
               <g transform="translate(0.5 0.25)">
                 <path
                   style="
                     fill: none;
                     stroke-linecap: square;
-                    stroke: #000;
+                    stroke: currentColor;
                     stroke-miterlimit: 10;
                   "
                   d="M.5.5h16"
                   transform="translate(-0.5 3)"
                 ></path>
                 <path
-                  class="b"
                   style="
-                    fill: 'currentColor';
+                    fill: currentColor;
                     stroke-linecap: round;
                     stroke-linejoin: round;
                     stroke-width: 0.5px;
-                    stroke: 'currentColor';
+                    stroke: currentColor;
                     stroke-miterlimit: 10;
                   "
                   d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
@@ -804,27 +1016,26 @@
               width="22.25"
               height="7.222"
               viewBox="0 0 22.25 7.222"
-              class="h-4 w-12"
+              class="h-4 w-12 text-gray-dark duration-150 hover:text-primary"
             >
               <g transform="translate(0.5 0.25)">
                 <path
                   style="
                     fill: none;
                     stroke-linecap: square;
-                    stroke: #1d1d1b;
+                    stroke: currentColor;
                     stroke-miterlimit: 10;
                   "
                   d="M.5.5h16"
                   transform="translate(-0.5 3)"
                 ></path>
                 <path
-                  class="b"
                   style="
-                    fill: #1d1d1b;
+                    fill: currentColor;
                     stroke-linecap: round;
                     stroke-linejoin: round;
                     stroke-width: 0.5px;
-                    stroke: #1d1d1b;
+                    stroke: currentColor;
                     stroke-miterlimit: 10;
                   "
                   d="M1.573,3.362H8c-3.542,0-8,3.361-8,3.361Zm0,0L0,0S4.459,3.362,8,3.362Z"
@@ -837,28 +1048,57 @@
       </div>
     </section>
 
-    <!-- ================= SECTION REVIEW SUMMARY ====================== -->
+    <!-- ================= SECTION REVIEW SUMMARY =============-->
     <div class="padding-page-lg">
       <section class="-mt-10 pb-[90px]">
-        <div>
-          <div>
+        <div
+          class="laptop:mx-auto laptop:grid laptop:w-full laptop:min-w-[680px] laptop:grid-cols-12 desktop:max-w-[880px] desktop:px-20"
+        >
+          <div class="review-wrapper">
             <img
               class="w-full"
               src="./assets/images/review-summary.webp"
               alt=""
             />
           </div>
-          <div class="text-center">
-            <div class="star-wrapper relative my-10 h-[38px]">
-              <img
-                class="absolute z-[10] h-full w-full"
-                src="./assets/svgs/stars.svg"
-                alt=""
-              />
+          <div
+            class="text-center laptop:col-start-5 laptop:col-end-13 laptop:text-left desktop:col-start-6"
+          >
+            <div class="star-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1035.378 130.862"
+                width="1035"
+              >
+                <path
+                  d="M64.593 105.462L27.54 126.561l6.793-44.176L4.691 50.737l41.375-5.934 18.527-39.56 18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176zm160.771-54.725l41.375-5.934 18.527-39.56 18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176-37.053-21.099-37.053 21.099 6.793-44.176zm255.379 75.823l6.793-44.175-29.642-31.648 41.375-5.934 18.527-39.56 18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176-37.053-21.099zm270.302-21.098l-37.053 21.099 6.793-44.176-29.642-31.648 41.375-5.934 18.527-39.56 18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176zm219.74 0l-37.053 21.099 6.793-44.176-29.642-31.648 41.375-5.934 18.527-39.56 18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="7.112"
+                ></path>
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="0"
+                height="0"
+                style="position: absolute; pointer-events: none"
+              >
+                <defs>
+                  <clipPath
+                    id="stars-mask"
+                    clipPathUnits="objectBoundingBox"
+                    transform="scale(0.00096583083666062 0.0076416377558038)"
+                  >
+                    <path
+                      d="M4.416 49.264L45.79 43.33 64.318 3.77l18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176-37.053-21.099-37.053 21.099 6.793-44.176zm299.1-5.934l41.376 5.934-29.642 31.648 6.793 44.176-37.053-21.099-37.053 21.099 6.793-44.176-29.642-31.648 41.375-5.934L284.99 3.77zm195.477 0L517.52 3.77l18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176-37.053-21.099-37.053 21.099 6.793-44.176-29.642-31.648zm191.874 5.934l41.375-5.934L750.77 3.77l18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176-37.053-21.099-37.053 21.099 6.793-44.176zm219.741 0l41.375-5.934L970.51 3.77l18.526 39.56 41.376 5.934-29.642 31.648 6.793 44.176-37.053-21.099-37.053 21.099 6.793-44.176z"
+                    ></path>
+                  </clipPath>
+                </defs>
+              </svg>
             </div>
-            <h2 class="mb-8 text-center font-light leading-[1.3]">
+            <h2 class="mb-8 font-light leading-[1.3]">
               The Absolution products are rated
-              <span class="font-europa">4.8</span>/5 according to 2072 customers
+              <b class="text-bold">4.8</b>/5 according to 2072 customers
               reviews.
             </h2>
             <p class="mb-8 font-europa text-md">
@@ -866,7 +1106,7 @@
               our product pages.
             </p>
             <div>
-              <a class="flex items-center justify-center gap-2" href="#"
+              <a class="btn-arrow laptop:justify-start" href="#"
                 ><span class="font-europa text-sm"
                   >Discover our best-selling products</span
                 >
@@ -878,19 +1118,19 @@
       </section>
     </div>
 
-    <!-- ================= SECTION FOUR BLOCK ====================== -->
+    <!-- ================= SECTION FOUR BLOCK =================-->
     <div class="padding-page">
       <section>
-        <div class="border-t-[1px] border-b-[1px] border-[#c6c6c6]">
+        <div class="four-block">
           <div class="block-item">
-            <p class="mb-3 font-extralight">Loyalty program</p>
+            <p class="block-desc">Loyalty program</p>
             <h3
-              class="mb-5 px-[15px]"
+              class="block-heading"
               style="font-size: calc(30.61224px - 0.16327vw)"
             >
               for happy skin
             </h3>
-            <a class="flex items-center gap-3" href="#">
+            <a class="btn-4-block" href="#">
               <span class="font-europa">Join the program</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -920,14 +1160,14 @@
             </a>
           </div>
           <div class="block-item">
-            <p class="mb-3 font-extralight">Sharing is caring</p>
+            <p class="block-desc">Sharing is caring</p>
             <h3
-              class="mb-5 px-[15px]"
+              class="block-heading"
               style="font-size: calc(30.61224px - 0.16327vw)"
             >
               €10 for you, €10 for your friends!
             </h3>
-            <a class="flex items-center gap-3" href="#">
+            <a class="btn-4-block" href="#">
               <span class="font-europa">Refer a friend</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -957,14 +1197,14 @@
             </a>
           </div>
           <div class="block-item">
-            <p class="mb-3 font-extralight">Our amazing ingredients</p>
+            <p class="block-desc">Our amazing ingredients</p>
             <h3
-              class="mb-5 px-[15px]"
+              class="block-heading"
               style="font-size: calc(30.61224px - 0.16327vw)"
             >
               The Absolution glossary
             </h3>
-            <a class="flex items-center gap-3" href="#">
+            <a class="btn-4-block" href="#">
               <span class="font-europa">All about our ingredients</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -993,15 +1233,15 @@
               </svg>
             </a>
           </div>
-          <div class="block-item">
-            <p class="mb-3 font-extralight">Do you need some "me-time"?</p>
+          <div class="block-item laptop:col-span-3">
+            <p class="block-desc">Do you need some "me-time"?</p>
             <h3
-              class="mb-5 px-[15px]"
+              class="block-heading"
               style="font-size: calc(30.61224px - 0.16327vw)"
             >
               The Absolution Spa
             </h3>
-            <a class="flex items-center gap-3" href="#">
+            <a class="btn-4-block" href="#">
               <span class="font-europa">Discover our treatments</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1034,11 +1274,11 @@
       </section>
     </div>
 
-    <!-- ================= SECTION FOUR BLOCK ====================== -->
+    <!-- ================= SECTION FOUR BLOCK =================-->
     <div class="padding-page">
-      <section class="border-b-[1px] border-[#c6c6c6] pt-[57px]">
+      <section class="border-[#c6c6c6] pt-[57px]">
         <div class="">
-          <div class="grid grid-cols-2 gap-x-3">
+          <div class="grid grid-cols-2 gap-x-24 laptop:grid-cols-3">
             <div class="block flex-col">
               <img class="w-full" src="./assets/images/faq-1.webp" alt="" />
               <div class="flex flex-col">
@@ -1059,18 +1299,30 @@
                 </div>
               </div>
             </div>
+            <div class="laptop: hidden flex-col laptop:block">
+              <img class="w-full" src="./assets/images/faq-3.webp" alt="" />
+              <div class="flex flex-col">
+                <p class="block-title py-4">News, tips, reviews…</p>
+                <div class="actions-btn flex items-center gap-3 pt-4">
+                  <span class="font-light">We are on Instargram!</span>
+                  <div>
+                    <img class="w-full" src="./assets/svgs/arrow.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="instargram-wrapper">
+        <div class="instargram-wrapper laptop:hidden">
           <div class="mx-auto h-5 w-5">
             <img class="w-full" src="./assets/svgs/instargram.svg" alt="" />
           </div>
           <h2 class="mb-6 pt-4">News, tips, reviews...</h2>
-          <div class="grid grid-cols-3 gap-4">
-            <img src="./assets/images/new-1.webp" alt="" />
-            <img src="./assets/images/new-2.webp" alt="" />
-            <img src="./assets/images/new-3.webp" alt="" />
+          <div class="mx-6 grid grid-cols-3 gap-6">
+            <img class="w-full" src="./assets/images/new-1.webp" alt="" />
+            <img class="w-full" src="./assets/images/new-2.webp" alt="" />
+            <img class="w-full" src="./assets/images/new-3.webp" alt="" />
           </div>
           <div class="actions-btn flex items-center justify-center gap-3 pt-8">
             <span class="font-light">We are on Instargram!</span>
@@ -1082,8 +1334,8 @@
       </section>
     </div>
 
-    <!-- ================= SECTION FOOTER ====================== -->
-    <footer class="section-footer">
+    <!-- ================= SECTION FOOTER =====================-->
+    <footer class="section-footer mt-8">
       <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
         <defs>
           <clipPath
@@ -1101,7 +1353,7 @@
         <!-- top footer -->
         <div class="top-footer">
           <div class="padding-page">
-            <div class="newsletter-footer">
+            <div class="newsletter-footer laptop:hidden">
               <h5 class="z-2 mb-8">
                 Follow our adventures and enjoy
                 <strong>15% off</strong>
@@ -1126,9 +1378,36 @@
             </div>
           </div>
           <div class="bg-wrapper"></div>
-          <div class="mt-[-112px] bg-[#ddc7b0] pt-[150px] text-center">
-            <div class="flex flex-col gap-8">
-              <div>
+          <div
+            class="mt-[-112px] bg-[#ddc7b0] pt-[150px] text-center laptop:px-12 laptop:text-left"
+          >
+            <div
+              class="mx-auto flex w-full min-w-[370px] flex-col gap-8 laptop:grid laptop:grid-cols-12 laptop:gap-0"
+            >
+              <div class="hidden laptop:col-span-3 laptop:block">
+                <h5 class="z-2 mb-8">
+                  Follow our adventures and enjoy
+                  <strong>15% off</strong>
+                  on your next order.
+                </h5>
+                <form class="relative mt-3 mb-10 w-full">
+                  <input type="email" placeholder="Email" />
+                  <button
+                    class="absolute right-0 top-0 h-[60px] w-[50px] border-none bg-transparent"
+                    type="submit"
+                    title="Subcribe"
+                  >
+                    <img src="./assets/svgs/arrow.svg" alt="" />
+                  </button>
+                  <div class="flex items-center gap-3 laptop:items-start">
+                    <input type="checkbox" />
+                    <span class="font-light"
+                      >I agree to receive Absolution's newsletter</span
+                    >
+                  </div>
+                </form>
+              </div>
+              <div class="laptop:col-span-2 laptop:col-start-5">
                 <h5 class="mb-[10px] font-medium">
                   Free samples of your choice
                 </h5>
@@ -1136,14 +1415,14 @@
                   Discover new products, 5 free samples with every order.
                 </p>
               </div>
-              <div>
+              <div class="laptop:col-span-2 laptop:col-start-8">
                 <h5 class="mb-[10px] font-medium">Shipped wherever you are</h5>
                 <p class="footer-desc">
                   Free shipping on orders over €45 for France and €100 for the
                   international.
                 </p>
               </div>
-              <div>
+              <div class="laptop:col-span-2 laptop:col-start-11">
                 <h5 class="mb-[10px] font-medium">Alway by your side</h5>
                 <p class="footer-desc">
                   A question? Write us at
@@ -1174,14 +1453,44 @@
         <!-- bottom footer -->
         <div class="bottom-footer">
           <ul class="footer-items"></ul>
-          <div class="py-10 text-center">
+          <div class="py-10 text-center laptop:flex laptop:justify-between">
             <span class="font-europa text-sm font-extralight"
               >&copy; 2022 Absolution</span
             >
+            <div class="hidden laptop:block">
+              <ul class="flex gap-3">
+                <li class="social-footer"><a href="#">Facebook</a></li>
+                <li class="social-footer"><a href="#">Twitter</a></li>
+                <li class="social-footer"><a href="#">Youtube</a></li>
+                <li class="social-footer"><a href="#">Pinterest</a></li>
+                <li class="social-footer"><a href="#">Instargram</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- BTN GO TO TOP -->
+    <div id="goTop" onclick="topFunction()" class="go-to-top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        data-name="Back to top"
+        viewBox="0 0 50 50"
+      >
+        <path fill="#fff" d="M0 0h50v50H0z" data-name="Rectangle 793"></path>
+        <g fill="#212121" data-name="Arrow top">
+          <path d="M25.639 19v17h-1V19z" data-name="Line 4"></path>
+          <path
+            stroke="#212121"
+            stroke-linecap="round"
+            stroke-width=".5"
+            d="M25.001 20.427V14c0 3.542 3.361 8 3.361 8zm0 0L21.639 22s3.362-4.459 3.362-8z"
+            data-name="Combined Shape"
+          ></path>
+        </g>
+      </svg>
+    </div>
 
     <!-- -----------------------LINK SCRIPT--------------------------------- -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -1195,10 +1504,32 @@
     <!-- swiper -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-    <script src="./scripts/index.js"></script>
-
     <script type="module">
       import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js';
+
+      const swipperValues = new Swiper('.swiper-values', {
+        slidesPerView: 1,
+        navigation: {
+          nextEl: '.next',
+          prevEl: '.prev',
+        },
+        loop: true,
+      });
+
+      const swipperList = new Swiper('.swiper-list', {
+        slidesPerView: 3,
+        scrollbar: {
+          el: '.swiper-scrollbar-list',
+          hide: false,
+          dragSize: 300,
+        },
+        loop: true,
+        centeredSlides: true,
+        navigation: {
+          nextEl: '.swipper-product-next',
+          prevEl: '.swipper-product-prev',
+        },
+      });
 
       const swiper = new Swiper('.mySwiper', {
         effect: 'creative',
@@ -1239,5 +1570,6 @@
         // },
       });
     </script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
