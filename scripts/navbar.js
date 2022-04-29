@@ -269,7 +269,7 @@ function SubMenuItemlv1(index) {
         .map(
           (item) => `
           <li class="menu-item2">
-            <a href="${link}">${item.titleLv2}</a>
+            <a href="">${item.titleLv2}</a>
             ${items?.length > 0 ? `<span class='arrow-menu'></span>` : ''}
           </li>`
         )

@@ -759,7 +759,16 @@
       </svg>
       <div class="mask-media-top"></div>
       <div class="h-full w-full">
-        <img class="hero-media" src="./assets/images/home-media.webp" alt="" />
+        <img
+          class="hero-media hidden laptop:block"
+          src="./assets/images/home-media.webp"
+          alt=""
+        />
+        <img
+          class="hero-media laptop:hidden"
+          src="./assets/images/home-media-mobile.webp"
+          alt=""
+        />
         <div
           class="absolute top-1/2 flex w-full flex-col items-center justify-center gap-6 text-center text-white laptop:mx-auto"
         >
@@ -1359,7 +1368,9 @@
     <div class="padding-page">
       <section class="border-[#c6c6c6] pt-[57px]">
         <div class="">
-          <div class="grid grid-cols-2 gap-x-24 laptop:grid-cols-3">
+          <div
+            class="grid grid-cols-2 gap-x-4 laptop:grid-cols-3 laptop:gap-x-24"
+          >
             <div class="block flex-col">
               <img class="w-full" src="./assets/images/faq-1.webp" alt="" />
               <div class="flex flex-col">
@@ -1400,7 +1411,7 @@
             <img class="w-full" src="./assets/svgs/instargram.svg" alt="" />
           </div>
           <h2 class="mb-6 pt-4">News, tips, reviews...</h2>
-          <div class="mx-6 grid grid-cols-3 gap-6">
+          <div class="mx-0 grid grid-cols-3 gap-6 laptop:mx-6">
             <img class="w-full" src="./assets/images/new-1.webp" alt="" />
             <img class="w-full" src="./assets/images/new-2.webp" alt="" />
             <img class="w-full" src="./assets/images/new-3.webp" alt="" />

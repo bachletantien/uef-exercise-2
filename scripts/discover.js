@@ -18,3 +18,39 @@ function ProductImg(img) {
   `;
   return productSlide;
 }
+
+// COLLAPSE
+
+const collapse = document.querySelectorAll('.collapsed');
+collapse.forEach((item, index) =>
+  item.addEventListener('click', function () {
+    this.classList.toggle('active');
+    const imgBigger = document.querySelectorAll('.img-bigger');
+    const content = this.nextElementSibling;
+    const items = Array.from(content.children);
+    const height = items
+      .map((item) => {
+        return item.getBoundingClientRect().height;
+      })
+      .reduce((sum, val) => sum + val, 0);
+
+    if (content.style.height) {
+      //falsy, truthy
+      content.style.height = '';
+      imgBigger.forEach((item, index2) => {
+        if (index2 === index) {
+          item.style.visibility = 'hidden';
+          item.style.opacity = '0';
+        }
+      });
+    } else {
+      content.style.height = `${height + items.length * 20}px`;
+      imgBigger.forEach((item, index2) => {
+        if (index2 === index) {
+          item.style.visibility = 'visible';
+          item.style.opacity = '1';
+        }
+      });
+    }
+  })
+);
