@@ -1,0 +1,17 @@
+{
+  "homepage": "https://bachletantien.github.io/uef-exercise-2",
+  "scripts": {
+    "concurrently": "concurrently \"yarn:tailwind-*\"",
+    "tailwind-home": "tailwindcss -i ./css/index.css -o ./dist/index.css --watch",
+    "tailwind-discover": "tailwindcss -i ./css/discover.css -o ./dist/dicover.css --watch",
+    "tailwind-face": "tailwindcss -i ./css/face.css -o ./dist/face.css --watch",
+    "tailwind-makeup": "tailwindcss -i ./css/makeup.css -o ./dist/makeup.css --watch",
+    "tailwind-new": "tailwindcss -i ./css/new.css -o ./dist/new.css --watch"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.8",
+    "tailwindcss": "^3.0.23"
+  }
+}

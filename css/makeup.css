@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Moret';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Moret-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Moret-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Extrabold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Europa';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Europa-Regular.ttf') format('ttf');
+}
+
+:root {
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+}
+
+.product-makeup-list {
+  @apply mt-5 grid grid-cols-2 gap-x-3 gap-y-[3rem] laptop:grid-cols-3 laptop:gap-x-12 laptop:gap-y-40;
+}
+
+.price-product {
+  @apply flex gap-2 font-normal;
+}
+.price-product .price-prev {
+  @apply font-normal  line-through;
+}
+
+.category-description a {
+  @apply underline;
+}

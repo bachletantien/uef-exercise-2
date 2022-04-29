@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'Moret';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Moret-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Moret-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Moret';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Extrabold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Europa';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/Europa-Regular.ttf') format('ttf');
+}
+
+:root {
+  --cate-desc-content: '';
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .breadcum {
+    @apply flex flex-wrap justify-center overflow-x-auto rounded-[0.25rem] pt-[22px];
+    overflow-x: auto;
+    padding-top: 22px;
+    white-space: nowrap;
+    list-style: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .breadcum ul li:not(:last-child) {
+    @apply mr-5;
+    margin-right: 20px;
+  }
+
+  .breadcum ul li {
+    display: inline;
+    line-height: 1.57;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .breadcum ul li:not(:first-child):before {
+    background: #1d1d1b;
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    left: -13px;
+    position: absolute;
+    top: 12px;
+    width: 4px;
+  }
+
+  .product-face-list {
+    @apply mt-5 grid grid-cols-2 gap-x-3 gap-y-[3rem] laptop:grid-cols-3 laptop:gap-x-12 laptop:gap-y-40;
+  }
+
+  .filter-btn {
+    @apply mt-[3rem] cursor-pointer rounded-[35px] border-[1px] border-primary bg-primary py-3 px-8 text-secondary outline-none duration-200 hover:bg-transparent hover:text-primary;
+    font-size: calc(15.38776px + 0.16327vw);
+  }
+
+  /*========= DESCRIPTION WRAPPER ================= */
+  .description-wrapper {
+  }
+  .actions {
+    @apply mt-6 w-fit rounded-[35px] border-[1px] border-primary py-3 px-7 font-europa;
+  }
+
+  .category-description {
+    @apply relative h-[305px] w-full overflow-hidden;
+    transition: height 0.3s linear;
+  }
+  .category-description a {
+    @apply underline;
+  }
+  .category-description::after {
+    background: linear-gradient(180deg, rgba(243, 238, 233, 0) 0, #f3eee9);
+    bottom: 0;
+    content: var(--cate-desc-content);
+    height: 94px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .category-description h2 {
+    @apply mb-[1rem] font-light;
+    font-size: calc(23.87755px + 1.63265vw);
+    line-height: 1.53em;
+  }
+  .category-description .para {
+    @apply font-europa text-sm;
+  }
+  .category-description h3 {
+    @apply my-[1rem] font-light;
+    font-size: calc(22.77551px + 0.32653vw);
+    line-height: 28px;
+  }
+
+  /* ================hero image================== */
+  .category-img:after {
+    background: #f3eeea;
+    bottom: -1px;
+    clip-path: url(#mask-front-banner-bottom);
+    content: '';
+    height: 1.94621vw;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+  }
+}
+
+/* ==========CSS OUT SIDE LAYER ===============*/
+/* .secondary-img {
+  @apply invisible absolute left-0 top-0 block h-full w-full opacity-0 duration-500 ease-out;
+} */
+.secondary-video {
+  @apply invisible absolute left-0 top-0  block h-full w-full opacity-0 duration-500 ease-out;
+}
+
+.product-item:hover .secondary-video {
+  @apply invisible opacity-100 laptop:visible;
+}
+
+.swiper-slide-product-center {
+  @apply col-span-2 laptop:col-span-1 laptop:min-w-[280px];
+}
+.product-item {
+  @apply relative;
+}
+.product-item img {
+  @apply h-full;
+}
+.product-item-center {
+  @apply relative h-full;
+}
+
+.content-product-center {
+  @apply absolute top-[50%] left-[50%] min-w-[200px] -translate-x-[50%] text-center text-secondary laptop:-translate-y-[40%];
+}
+.content-product-center .product-description {
+  @apply mb-[0.5rem] font-moret text-lg font-light leading-[28px] !important;
+}
+
+.content-product-center .product-title,
+.content-product-center span {
+  @apply mb-10 flex flex-col text-heading3 font-light leading-[1.1]  !important;
+}
+
+.primary-img {
+  @apply h-full;
+}
+
+.pagination {
+  @apply mt-[80px] flex justify-center;
+}
+.current {
+  @apply mr-2 block h-[50px] w-[50px] bg-cover;
+  background-image: url('../assets/svgs/arrow-face.svg');
+}
+.next {
+  @apply ml-2 block h-[50px] w-[50px] bg-cover;
+  background-image: url('../assets/svgs/arrow-face2.svg');
+}
+
+/* description wrapper */
+.open {
+  height: auto;
+  overflow: auto;
+}
