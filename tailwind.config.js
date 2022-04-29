@@ -61,6 +61,9 @@ module.exports = {
 
       desktop: '1280px',
       // => @media (min-width: 1280px) { ... }
+
+      desktopxl: '1400px',
+      // => @media (min-width: 1400px) { ... }
     },
   },
   plugins: [],

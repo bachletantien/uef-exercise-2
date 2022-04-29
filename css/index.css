@@ -51,6 +51,9 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply selection:bg-pink-light selection:text-white;
+  }
   body {
     @apply w-screen overflow-x-hidden  bg-pallet font-moret text-lg font-normal leading-relaxed text-primary;
   }
@@ -139,6 +142,10 @@
     top: calc(100% + -5px);
   }
 
+  .btn-see-all {
+    @apply mt-10 rounded-full border border-primary py-4 text-primary laptop:w-fit laptop:px-12 laptop:py-4;
+  }
+
   .mask-media-top {
     @apply z-30 h-[60px] translate-y-[100%] bg-secondary laptop:h-[100px];
     clip-path: url(#mask-front-media-mobile-top);
@@ -158,6 +165,79 @@
 
   .item-card {
     @apply overflow-hidden rounded-xl py-5;
+  }
+
+  .text-animate {
+    @apply relative inline-block font-moret font-normal  laptop:!text-[50px];
+    font-size: calc(22.87755px + 1.63265vw);
+  }
+
+  /* ---------------------------- Setion value slider------------------------------ */
+  .swiper-values {
+    @apply relative mb-12 w-full;
+  }
+
+  .swiper-wrapper-value {
+    @apply flex flex-shrink-0;
+  }
+
+  .swiper-slide-value {
+    @apply flex-shrink px-10 text-center;
+  }
+
+  .img-swipper {
+    @apply h-full w-full object-cover;
+  }
+
+  /*========================= NEW SECTION =============================*/
+  .new-content {
+    @apply relative -mt-44 flex flex-col items-center gap-3 px-10 pt-40 text-center laptop:mt-0 laptop:max-w-[480px] laptop:items-start laptop:text-left;
+  }
+
+  .btn-new {
+    @apply w-full rounded-full border border-primary py-5 outline-none transition duration-300 hover:bg-primary hover:text-white laptop:w-fit laptop:px-14;
+  }
+
+  /* -------------------- REVIEW SUMMARY ---------------------- */
+  .star-wrapper {
+    @apply relative mb-12 mt-3 flex flex-row laptop:h-[20px] laptop:w-[160px] desktop:h-[30px] desktop:w-[200px];
+    clip-path: url(#stars-mask);
+  }
+
+  .star-wrapper:before {
+    @apply absolute left-0 top-0 bottom-0 content-empty;
+    background-color: #000;
+    width: 97.666%;
+  }
+
+  .review-wrapper {
+    @apply laptop:col-span-3 laptop:min-h-[260px] laptop:min-w-[260px] laptop:self-center desktop:col-span-4;
+  }
+
+  .btn-arrow {
+    @apply flex items-center justify-center gap-2 duration-200 ease-in hover:gap-4;
+  }
+
+  .text-bold {
+    @apply font-moret font-bold;
+    font-size: calc(22.87755px + 1.63265vw);
+  }
+
+  /* -----========================-FOOTER ====================*/
+  .footer-desc {
+    @apply text-sm font-extralight laptop:pt-7;
+  }
+
+  .logo-footer {
+    @apply flex justify-center bg-[#ddc7b0] pt-[100px] pb-[30px] laptop:justify-start laptop:px-12 laptop:pt-[10px];
+  }
+
+  .bottom-footer {
+    @apply bg-[#ddc7b0] laptop:px-12;
+  }
+
+  .go-to-top {
+    @apply fixed bottom-[20%] right-0 z-[999] h-[50px] w-[50px] cursor-pointer opacity-100 duration-150;
   }
 
   .block-item {
@@ -222,77 +302,39 @@
     @apply h-[22px] w-[22px] laptop:h-[31px] laptop:w-[29px];
   }
 
-  .text-animate {
-    @apply relative inline-block font-moret font-normal  laptop:!text-[50px];
-    font-size: calc(22.87755px + 1.63265vw);
+  .breadcum {
+    @apply flex flex-wrap justify-center overflow-x-auto rounded-[0.25rem] pt-[22px];
+    overflow-x: auto;
+    padding-top: 22px;
+    white-space: nowrap;
+    list-style: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .breadcum ul li:not(:last-child) {
+    @apply mr-5;
+    margin-right: 20px;
   }
 
-  /* ---------------------------- Setion value slider------------------------------ */
-  .swiper-values {
-    @apply relative mb-12 w-full;
+  .breadcum ul li {
+    display: inline;
+    line-height: 1.57;
+    position: relative;
+    vertical-align: middle;
   }
 
-  .swiper-wrapper-value {
-    @apply flex flex-shrink-0;
-  }
-
-  .swiper-slide-value {
-    @apply flex-shrink px-10;
-  }
-
-  .img-swipper {
-    @apply h-full w-full object-cover;
-  }
-
-  /*========================= NEW SECTION =============================*/
-  .new-content {
-    @apply relative -mt-44 flex flex-col items-center gap-3 px-10 pt-40 text-center laptop:mt-0 laptop:max-w-[480px] laptop:items-start laptop:text-left;
-  }
-
-  .btn-new {
-    @apply w-full rounded-full border border-primary py-5 outline-none transition duration-300 hover:bg-primary hover:text-white laptop:w-fit laptop:px-14;
-  }
-
-  /* -------------------- REVIEW SUMMARY ---------------------- */
-  .star-wrapper {
-    @apply relative mb-12 mt-3 flex flex-row laptop:h-[20px] laptop:w-[160px] desktop:h-[30px] desktop:w-[200px];
-    clip-path: url(#stars-mask);
-  }
-
-  .star-wrapper:before {
-    @apply absolute left-0 top-0 bottom-0 content-empty;
-    background-color: #000;
-    width: 97.666%;
-  }
-
-  .review-wrapper {
-    @apply laptop:col-span-3 laptop:min-h-[260px] laptop:min-w-[260px] laptop:self-center desktop:col-span-4;
-  }
-
-  .btn-arrow {
-    @apply flex items-center justify-center gap-2 duration-200 ease-in hover:gap-4;
-  }
-
-  .text-bold {
-    @apply font-moret font-bold;
-    font-size: calc(22.87755px + 1.63265vw);
-  }
-
-  /* -----========================-FOOTER ====================*/
-  .footer-desc {
-    @apply text-sm font-extralight laptop:pt-7;
-  }
-
-  .logo-footer {
-    @apply flex justify-center bg-[#ddc7b0] pt-[100px] pb-[30px] laptop:justify-start laptop:px-12 laptop:pt-[10px];
-  }
-
-  .bottom-footer {
-    @apply bg-[#ddc7b0] laptop:px-12;
-  }
-
-  .go-to-top {
-    @apply fixed bottom-[20%] right-0 z-[999] h-[50px] w-[50px] cursor-pointer opacity-100 duration-150;
+  .breadcum ul li:not(:first-child):before {
+    background: #1d1d1b;
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    left: -13px;
+    position: absolute;
+    top: 12px;
+    width: 4px;
   }
 }
 
@@ -321,6 +363,7 @@
 }
 
 .menu-wrapper-active {
+  @apply text-primary;
   transform: none;
 }
 
@@ -414,6 +457,10 @@
   @apply border-b-[1px] border-gray pb-[13px] text-[30px] leading-[35px];
 }
 
+.mega-menu-items .menu-blog img {
+  @apply w-full;
+}
+
 .mega-menu-items .menu-item2 {
   @apply py-[0.875rem] font-europa text-sm font-bold leading-[1.375rem];
 }
@@ -485,11 +532,11 @@ better-select {
 }
 
 .scrollbar-bottom {
-  @apply mt-12 hidden items-center gap-8 px-16 laptop:flex;
+  @apply mt-12 flex items-center justify-center gap-8 px-16;
 }
 
 .swiper-wrapper-item {
-  @apply grid grid-cols-2 gap-x-3 gap-y-[3rem] laptop:flex;
+  @apply flex gap-y-[3rem];
 }
 
 .primary-img {
@@ -519,7 +566,7 @@ better-select {
 }
 
 .product-tag {
-  @apply relative z-10 flex h-[63px] w-[63px] items-center justify-center rounded-full bg-pink-light py-[16px] px-[16px] text-center text-[10px] text-white;
+  @apply relative z-10 flex h-[63px] w-[63px] items-center justify-center rounded-full  py-[16px] px-[16px] text-center text-[10px] text-white;
 }
 
 .product-tags {
@@ -567,7 +614,7 @@ better-select {
   clip-path: url(#mask-diag-bottom-mobile);
 }
 
-/* ------------------------------------swiper ----------------------------------------------*/
+/* --------------------------------------swiper ----------------------------------------------*/
 
 .mySwiper {
   height: 800px;
@@ -643,10 +690,10 @@ better-select {
   @apply relative mt-3 flex flex-col items-center laptop:mt-16;
 }
 .desc-thumbnail {
-  @apply invisible absolute top-0 px-4 font-europa text-sm opacity-0 duration-500 ease-out;
+  @apply invisible absolute top-0 px-4 font-europa text-sm opacity-0 duration-300 ease-linear;
 }
 .img-thumbnail {
-  @apply max-w-[204px];
+  @apply max-w-[204px] opacity-100 duration-300 ease-linear;
 }
 
 .primary-img {
@@ -655,7 +702,7 @@ better-select {
 }
 
 .wrapper-content-thumbnail:hover .img-thumbnail {
-  @apply laptop:invisible;
+  @apply laptop:invisible laptop:opacity-0;
 }
 
 .wrapper-content-thumbnail:hover .desc-thumbnail {
@@ -682,3 +729,32 @@ better-select {
 }
 
 /* =-====================================-= */
+/* NAVBAR DESKTOP */
+.navbar-items-desk {
+  @apply relative flex gap-6 text-inherit;
+}
+
+.navbar-item {
+  @apply cursor-pointer text-inherit;
+}
+
+.submenu-wrapper {
+  @apply absolute flex w-screen gap-4 bg-secondary px-[4%]  text-primary;
+}
+
+.submenu-inner {
+  @apply flex-1 pt-[10px] pb-5 text-sm;
+}
+
+.submenu-inner li {
+  @apply py-[8px] text-sm leading-[1.2] text-gray-dark;
+}
+.submenu-inner .title-lv3 {
+  @apply pb-4 font-bold text-primary opacity-100;
+}
+.submenu-inner .submenu-item3 {
+  @apply ml-6;
+}
+.submenu-title {
+  @apply pb-10 font-bold text-primary;
+}
