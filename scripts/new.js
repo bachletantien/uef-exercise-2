@@ -135,6 +135,8 @@ const thumbnailsNewSlider = [
   },
 ];
 
+// ingredient slider
+
 function IngredientProduct(data) {
   const { image, title, stt, desc, bgColor } = data;
   const productItem = document.createElement('div');
@@ -159,6 +161,8 @@ const swiperWrapper = document.querySelector('.swiper-wrapper-ingredient');
 ingredientProducts.forEach((item) =>
   swiperWrapper.appendChild(IngredientProduct(item))
 );
+
+// thumbnail slider
 
 const swiperNewWrapper = document.querySelector(
   '.swiper-wrapper-new-thumbnails'

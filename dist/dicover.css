@@ -540,7 +540,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.breadcum {
+.product-left-column .breadcum {
   display: flex;
   flex-wrap: wrap;
   overflow-x: auto;
@@ -549,20 +549,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px) {
-  .breadcum {
-    text-align: left;
+  .product-left-column .breadcum {
+    justify-content: flex-start;
   }
 }
 
-.breadcum {
+.product-left-column .breadcum {
   overflow-x: auto;
   padding-top: 22px;
   white-space: nowrap;
   list-style: none;
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .product-left-column .breadcum ul li:not(:last-child) {
@@ -653,6 +651,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(243 238 234 / var(--tw-text-opacity));
 }
 
+@media (min-width: 1024px) {
+  .discount {
+    height: 63px;
+  }
+
+  .discount {
+    width: 63px;
+  }
+
+  .discount {
+    font-size: 18px;
+  }
+}
+
 .model-price-wrapper .product-heading-title {
   padding-bottom: 1.25rem;
   font-size: calc(26.93878px + 0.81633vw);
@@ -689,7 +701,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.5;
 }
 
-.btn-product-primary {
+.btn-product-primary, .btn-product-card {
   display: flex;
   height: 50px;
   width: 100%;
@@ -705,9 +717,45 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 16px;
+  transition: all 0.25s linear;
+}
+
+.btn-product-card {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 29 27 / var(--tw-bg-opacity));
+  padding-top: 32px;
+  padding-bottom: 32px;
+  --tw-text-opacity: 1;
+  color: rgb(243 238 234 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .btn-product-card:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 238 234 / var(--tw-bg-opacity));
+  }
+
+  .btn-product-card:hover {
+    --tw-text-opacity: 1;
+    color: rgb(29 29 27 / var(--tw-text-opacity));
+  }
+}
+
+.btn-product-primary {
   --tw-text-opacity: 1;
   color: rgb(29 29 27 / var(--tw-text-opacity));
-  transition: all 0.25s linear;
+}
+
+@media (min-width: 1024px) {
+  .btn-product-primary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(29 29 27 / var(--tw-bg-opacity));
+  }
+
+  .btn-product-primary:hover {
+    --tw-text-opacity: 1;
+    color: rgb(243 238 234 / var(--tw-text-opacity));
+  }
 }
 
 .btn-value {
@@ -715,16 +763,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .btn-value::before {
-  background: #1d1d1b;
-  border-radius: 4px;
-  content: '';
+  position: relative;
   display: inline-block;
   height: 4px;
-  margin: 0 8px 0 13px;
-  position: relative;
-  transform: translate(-50%, -50%);
-  vertical-align: middle;
   width: 4px;
+  border-radius: 4px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 29 27 / var(--tw-bg-opacity));
+  vertical-align: middle;
+  transition-duration: 200ms;
+  --tw-content: "";
+  content: var(--tw-content);
+  margin: 0 8px 0 13px;
+  transform: translate(-50%, -50%);
 }
 
 .btn-product-primary span {
@@ -829,6 +880,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   word-break: break-word;
 }
 
+/* 4. section thumbnail */
+
 /* 5. section collapse */
 
 .link {
@@ -854,6 +907,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .accordion-item .active:after {
   transform: rotate(-90deg);
+}
+
+.accordion-item:first-child {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(29 29 27 / var(--tw-border-opacity));
+}
+
+@media (min-width: 1024px) {
+  .accordion-item:first-child {
+    border-top-width: 1px;
+  }
 }
 
 .accordion-item p srtong {
@@ -914,6 +978,65 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: linear;
 }
 
+/* 6. text and product */
+
+.text-and-product::before {
+  background-image: url('../assets/svgs/line-discover.svg');
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin-bottom: 60px;
+  display: block;
+  height: 0px;
+  width: 100%;
+  background-size: cover;
+  --tw-content: "";
+  content: var(--tw-content);
+  background-position: 50%;
+  padding-bottom: 9.97547%;
+}
+
+.col-1-text .overtitle {
+  margin-bottom: 10px;
+  font-family: Moret, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 28px;
+  line-height: 1.18;
+}
+
+.col-1-text p {
+  margin-bottom: 2rem;
+  margin-top: 0px;
+  font-size: 24px;
+  line-height: 1.625;
+}
+
+.col-1-text h2 {
+  margin-bottom: 35px;
+  line-height: 1.16;
+  font-size: calc(36.93878px + 0.81633vw);
+}
+
+.tag-item {
+  margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em;
+  --tw-text-opacity: 1;
+  color: rgb(29 29 27 / var(--tw-text-opacity));
+  opacity: 0.4;
+  font-size: calc(11.38776px + 0.16327vw);
+}
+
+/* 7. Text edito link product */
+
+.text-editor {
+  margin-bottom: 1rem;
+  font-family: Europa, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 300;
+  line-height: 1.3;
+  font-size: calc(13.77551px + 0.32653vw);
+}
+
 .visible {
   visibility: visible;
 }
@@ -962,12 +1085,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 0px;
 }
 
-.left-\[50\%\] {
-  left: 50%;
+.left-\[10px\] {
+  left: 10px;
 }
 
 .top-\[40\%\] {
   top: 40%;
+}
+
+.right-\[10px\] {
+  right: 10px;
+}
+
+.left-\[50\%\] {
+  left: 50%;
 }
 
 .top-\[11px\] {
@@ -976,14 +1107,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .left-0 {
   left: 0px;
-}
-
-.left-\[10px\] {
-  left: 10px;
-}
-
-.right-\[10px\] {
-  right: 10px;
 }
 
 .z-20 {
@@ -996,6 +1119,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .z-10 {
   z-index: 10;
+}
+
+.col-end-13 {
+  grid-column-end: 13;
 }
 
 .mx-auto {
@@ -1091,6 +1218,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-0 {
   margin-bottom: 0px;
+}
+
+.mb-\[12px\] {
+  margin-bottom: 12px;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-\[15px\] {
+  margin-left: 15px;
+}
+
+.mb-\[45px\] {
+  margin-bottom: 45px;
 }
 
 .mt-\[60px\] {
@@ -1502,14 +1645,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 21px;
 }
 
-.py-\[32px\] {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+
+.py-\[5rem\] {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.px-\[5rem\] {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.py-\[80px\] {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .px-\[10px\] {
@@ -1520,11 +1673,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-\[20px\] {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-.py-\[80px\] {
-  padding-top: 80px;
-  padding-bottom: 80px;
 }
 
 .px-4 {
@@ -1767,9 +1915,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(29 29 27 / var(--tw-text-opacity)) !important;
 }
 
+.text-\[\#43433f\] {
+  --tw-text-opacity: 1;
+  color: rgb(67 67 63 / var(--tw-text-opacity));
+}
+
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.opacity-40 {
+  opacity: 0.4;
 }
 
 .outline-none {
@@ -1811,6 +1968,10 @@ Ensure the default browser behavior of the `hidden` attribute.
      object-fit: cover;
 }
 
+.swiper-pagination-product {
+  position: relative !important;
+}
+
 .swiper-pagination-bullets {
   bottom: -30px !important;
 }
@@ -1834,7 +1995,124 @@ Ensure the default browser behavior of the `hidden` attribute.
   opacity: 1 !important;
 }
 
+/* 4.swiper thumbnail */
+
+.swiper-slide-ingredient {
+  position: relative !important;
+  display: flex !important;
+  height: 878px !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+  padding-top: 50px !important;
+  padding-bottom: 100px !important;
+  text-align: center !important;
+}
+
+@media (min-width: 1024px) {
+  .swiper-slide-ingredient {
+    display: grid !important;
+  }
+
+  .swiper-slide-ingredient {
+    height: 600px !important;
+  }
+
+  .swiper-slide-ingredient {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .swiper-slide-ingredient {
+    padding-left: 12rem !important;
+    padding-right: 12rem !important;
+  }
+
+  .swiper-slide-ingredient {
+    text-align: left !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .swiper-slide-ingredient {
+    padding-left: 20rem !important;
+    padding-right: 20rem !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .swiper-slide-ingredient {
+    padding-left: 25rem !important;
+    padding-right: 25rem !important;
+  }
+}
+
+.swiper-slide-ingredient {
+  -webkit-clip-path: ellipse(75% 50% at 50% 50%);
+          clip-path: ellipse(75% 50% at 50% 50%);
+}
+
+.img-ingredient-product {
+  height: 230px;
+  width: 156px;
+}
+
+@media (min-width: 1024px) {
+  .img-ingredient-product {
+    height: auto;
+  }
+
+  .img-ingredient-product {
+    width: 300px;
+  }
+}
+
+.discover-slider-title {
+  margin-bottom: 2rem;
+}
+
+.swiper-slide-ingredient img {
+  width: 100%;
+}
+
+.swiper-slide-ingredient .number {
+  margin-bottom: 1.25rem;
+  display: inline-block;
+  border-radius: 50%;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(29 29 27 / var(--tw-border-opacity));
+  padding: 9px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.swiper-slide-ingredient .title {
+  margin-bottom: 2rem;
+  font-size: 23px;
+}
+
+.swiper-slide-ingredient .desc-product {
+  font-weight: 300;
+  line-height: 1.625;
+}
+
+/* MEDIA QUERY */
+
+@media only screen and (min-width: 768px) {
+  .swiper-slide-ingredient {
+    -webkit-clip-path: ellipse(46.29% 50% at 50.39% 49.83%);
+            clip-path: ellipse(46.29% 50% at 50.39% 49.83%);
+  }
+}
+
 @media only screen and (min-width: 1024px) {
+  .swiper-slide-ingredient {
+    -webkit-clip-path: ellipse(46.29% 50% at 50.39% 49.83%);
+            clip-path: ellipse(46.29% 50% at 50.39% 49.83%);
+  }
+
   .desktop-img {
     -webkit-clip-path: url(#bgiSvgPath);
             clip-path: url(#bgiSvgPath);
@@ -1842,6 +2120,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .mobile-img::after, .mobile-img::before {
     visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .swiper-slide-ingredient {
+    -webkit-clip-path: ellipse(39.04% 48.66% at 50.39% 49.83%);
+            clip-path: ellipse(39.04% 48.66% at 50.39% 49.83%);
   }
 }
 
@@ -1952,6 +2237,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .laptop\:col-start-11 {
     grid-column-start: 11;
+  }
+
+  .laptop\:col-start-9 {
+    grid-column-start: 9;
   }
 
   .laptop\:col-end-13 {
@@ -2066,6 +2355,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 700px;
   }
 
+  .laptop\:max-w-\[1008px\] {
+    max-width: 1008px;
+  }
+
   .laptop\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -2113,6 +2406,26 @@ Ensure the default browser behavior of the `hidden` attribute.
          column-gap: 2rem;
   }
 
+  .laptop\:gap-x-12 {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+
+  .laptop\:gap-x-\[10rem\] {
+    -moz-column-gap: 10rem;
+         column-gap: 10rem;
+  }
+
+  .laptop\:gap-x-\[15rem\] {
+    -moz-column-gap: 15rem;
+         column-gap: 15rem;
+  }
+
+  .laptop\:gap-x-\[3rem\] {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+
   .laptop\:px-\[120px\] {
     padding-left: 120px;
     padding-right: 120px;
@@ -2157,6 +2470,22 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 0px;
   }
 
+  .laptop\:pt-\[80px\] {
+    padding-top: 80px;
+  }
+
+  .laptop\:pt-40 {
+    padding-top: 10rem;
+  }
+
+  .laptop\:pt-52 {
+    padding-top: 13rem;
+  }
+
+  .laptop\:pt-64 {
+    padding-top: 16rem;
+  }
+
   .laptop\:text-left {
     text-align: left;
   }
@@ -2183,6 +2512,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .laptop\:leading-\[\.89em\] {
     line-height: .89em;
+  }
+
+  .laptop\:hover\:text-secondary:hover {
+    --tw-text-opacity: 1;
+    color: rgb(243 238 234 / var(--tw-text-opacity));
   }
 }
 
@@ -2219,5 +2553,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   .desktop\:px-\[5rem\] {
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .desktopxl\:left-\[230px\] {
+    left: 230px;
+  }
+
+  .desktopxl\:right-\[230px\] {
+    right: 230px;
+  }
+
+  .desktopxl\:px-\[13rem\] {
+    padding-left: 13rem;
+    padding-right: 13rem;
   }
 }
