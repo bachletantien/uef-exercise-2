@@ -241,13 +241,13 @@ headerMenu.forEach((item) => {
 });
 
 function MenuItem(data) {
-  const { title, items, blogs } = data;
+  const { title, items, blogs ,link} = data;
 
   const megaMenuItem = document.createElement('ul');
   megaMenuItem.className = 'mega-menu-items';
   megaMenuItem.innerHTML = `
     <li class="menu-item">
-      <a href="#">${title}</a>
+      <a href="${title === 'New' ? link :''}">${title}</a>
       ${
         items?.length > 0 || blogs?.length > 0
           ? `<span class='arrow-menu'></span>`
@@ -293,7 +293,7 @@ function SubMenuItemlv1(index) {
 
 function SubMenuItemlv2(index, index2) {
   const { titleLv2, itemsLv2 } = headerMenu[index].items[index2];
-
+  const {link} = headerMenu[index];
   const megaMenuItem2 = document.createElement('ul');
   megaMenuItem2.className = 'mega-menu-item2';
   megaMenuItem2.innerHTML = `
@@ -309,10 +309,10 @@ function SubMenuItemlv2(index, index2) {
               <ul>${item.itemsLv3
                 .map(
                   (item2) =>
-                    `<li class="menu-sub-item3"><a href="#">${item2}</a></li>`
+                    `<li class="menu-sub-item3"><a href="${link}">${item2}</a></li>`
                 )
                 .join('')}</ul>`
-            : `<a href="#">${item}</a>`
+            : `<a href="${link}">${item}</a>`
         }
         </li>`
         )
