@@ -170,3 +170,7 @@ const swiperNewWrapper = document.querySelector(
 thumbnailsNewSlider.forEach((item) =>
   swiperNewWrapper.appendChild(Thumbnail(item))
 );
+
+document.body.addEventListener('drag', function (e) {
+  e.preventDefault();
+});

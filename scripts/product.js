@@ -22,7 +22,7 @@ function Product(data) {
   ${
     type && type === 'isProduct'
       ? `
-            <a class="relative" href="#">
+            <a class="relative" href="../page/discover.html">
               <div class="product-item">
                 <img class="primary-img" src='${imgProduct}' alt="product" />
                 ${

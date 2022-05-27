@@ -208,7 +208,7 @@ function Product(data) {
   const product = document.createElement('div');
   product.className = 'swiper-slide swiper-slide-product';
   product.innerHTML = `
-            <a class="relative" href="#">
+            <a class="relative" href="../page/discover.html">
               <div class="product-item ">
                 <img
                 class="primary-img"
